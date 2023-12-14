@@ -1,7 +1,11 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "types": [
+      "node",
+      "webpack-env" // here
+    ]
   },
   "exclude": [
     "__tests__/**/*-test.ts",
