@@ -1,5 +1,8 @@
-import { Box, Text, Image, View } from '@gluestack-ui/themed';
+import { Box, Text, Image } from '@gluestack-ui/themed';
 import { useGlobalSearchParams } from 'expo-router';
+import Logo from './F1.svg';
+import Background from './triangle.svg';
+import { ImageBackground } from 'react-native';
 
 const f1 = () => {
     const { id } = useGlobalSearchParams();
@@ -21,12 +24,23 @@ const f1 = () => {
         <>
             <Box h="$full" backgroundColor="$black">
                 <Image
-                    // style={{ alignSelf: 'flex-end' }}
                     size="full"
                     source={require('../../assets/f1/formula1-mercedes.jpeg')}
                     height={300}
                 />
-                <Text fontFamily="Horizon">{id}</Text>
+                <ImageBackground
+                    source={require('../../assets/f1/formula1-mercedes.jpeg')}
+                    style={{
+                        flex: 1,
+                        // resizeMode: 'cover',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Box alignItems="center">
+                        <Logo height="100" width={'100'} />
+                        <Text fontFamily="Horizon">{id}</Text>
+                    </Box>
+                </ImageBackground>
             </Box>
         </>
     );
