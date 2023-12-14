@@ -1,13 +1,13 @@
 module.exports = {
     env: {
-        browser: true,
+        node: true,
         es2021: true
     },
     extends: ['universe/native'],
     overrides: [
         {
             env: {
-                node: false
+                node: true
             },
             files: ['.eslintrc.{js,cjs}'],
             parserOptions: {
