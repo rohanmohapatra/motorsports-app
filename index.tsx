@@ -1,6 +1,7 @@
 import { registerRootComponent } from 'expo';
 import AppLoading from 'expo-app-loading';
 import { ExpoRoot } from 'expo-router';
+import { RequireContext } from 'expo-router/build/types';
 import { useState } from 'react';
 
 import useCustomFonts from './hooks/useCustomFonts';
@@ -23,7 +24,7 @@ export function App() {
         );
     }
     const ctx = require.context('./app');
-    return <ExpoRoot context={ctx} />;
+    return <ExpoRoot context={ctx as RequireContext} />;
 }
 
 registerRootComponent(App);

@@ -1,7 +1,7 @@
 {
     "name": "expo-app",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "index.tsx",
     "scripts": {
         "start": "expo start",
         "android": "expo start --android",
@@ -36,6 +36,7 @@
         "@babel/core": "^7.20.0",
         "@expo/webpack-config": "^19.0.0",
         "@types/react": "~18.2.14",
+        "@types/webpack-env": "^1.18.4",
         "@typescript-eslint/eslint-plugin": "^6.4.0",
         "eslint": "^8.55.0",
         "eslint-config-standard-with-typescript": "latest",
