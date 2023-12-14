@@ -1,8 +1,9 @@
 import { Box, VStack, Button, ButtonText } from '@gluestack-ui/themed';
-import Logo from './logo.svg';
-import { darkBackground, neonGreen } from '../components/theme/colors';
-import { Header } from '../components/home/Header';
 import { useRouter } from 'expo-router';
+
+import Logo from './logo.svg';
+import { Header } from '../components/home/Header';
+import { darkBackground, neonGreen } from '../components/theme/colors';
 
 const Home = () => {
     const navigation = useRouter();

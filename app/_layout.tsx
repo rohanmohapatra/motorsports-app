@@ -1,10 +1,7 @@
-import { GluestackUIProvider, Text } from '@gluestack-ui/themed';
-import { useFonts } from 'expo-font';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Slot, SplashScreen } from 'expo-router';
-import { useCallback } from 'react';
-import { View } from 'react-native';
+
 import { config } from '../gluestack.config';
-import { Stack } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
