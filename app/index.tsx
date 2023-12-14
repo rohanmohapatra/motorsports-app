@@ -23,12 +23,22 @@ const Home = () => {
                 </Box>
                 <VStack space="md" width="$80" pt="$9">
                     <Button rounded="$full" bgColor={neonGreen}>
-                        <ButtonText fontFamily="Horizon" color={darkBackground}>
+                        <ButtonText
+                            fontFamily="Horizon"
+                            color={darkBackground}
+                            onPress={() => {
+                                navigation.push('/f1/mercedes');
+                            }}
+                        >
                             Explore F1 Cars
                         </ButtonText>
                     </Button>
                     <Button rounded="$full" bgColor={neonGreen}>
-                        <ButtonText fontFamily="Horizon" color={darkBackground}>
+                        <ButtonText
+                            fontFamily="Horizon"
+                            color={darkBackground}
+                            fontSize={'$sm'}
+                        >
                             Explore Hypercars
                         </ButtonText>
                     </Button>
