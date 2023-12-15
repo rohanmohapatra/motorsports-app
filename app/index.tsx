@@ -24,7 +24,13 @@ const Home = () => {
                 </Box>
                 <VStack space="md" width="$80" pt="$9">
                     <Button rounded="$full" bgColor={neonGreen}>
-                        <ButtonText fontFamily="Horizon" color={darkBackground}>
+                        <ButtonText
+                            fontFamily="Horizon"
+                            color={darkBackground}
+                            onPress={() => {
+                                navigation.push('/gt3/mercedes-w13');
+                            }}
+                        >
                             Explore F1 Cars
                         </ButtonText>
                     </Button>
