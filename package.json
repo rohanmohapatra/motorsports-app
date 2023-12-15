@@ -1,13 +1,14 @@
 {
     "name": "expo-app",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "index.tsx",
     "scripts": {
         "start": "expo start",
         "android": "expo start --android",
         "ios": "expo start --ios",
         "web": "expo start --web",
-        "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./"
+        "prepare": "husky install",
+        "lint": "echo \"🎉Running eslint check\" && eslint --ext .js,.jsx,.ts,.tsx ."
     },
     "dependencies": {
         "@expo/html-elements": "latest",
@@ -34,15 +35,15 @@
     "devDependencies": {
         "@babel/core": "^7.20.0",
         "@expo/webpack-config": "^19.0.0",
-        "@types/eslint": "^8",
         "@types/react": "~18.2.14",
-        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@types/webpack-env": "^1.18.4",
+        "@typescript-eslint/eslint-plugin": "^6.4.0",
         "eslint": "^8.55.0",
-        "eslint-config-airbnb-typescript": "^17.1.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-import": "^2.29.0",
-        "eslint-plugin-jsx-a11y": "^6.8.0",
-        "eslint-plugin-react": "^7.33.2",
+        "eslint-config-standard-with-typescript": "latest",
+        "eslint-config-universe": "^12.0.0",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+        "eslint-plugin-promise": "^6.0.0",
         "husky": "^8.0.3",
         "prettier": "^3.1.1",
         "react-native-svg-transformer": "^1.2.0",
