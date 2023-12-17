@@ -14,8 +14,8 @@ const Home = () => {
                     <Box
                         transform={[
                             { rotate: '40deg' },
-                            { translateX: -90 },
-                            { translateY: -170 }
+                            { translateX: -80 },
+                            { translateY: -200 }
                         ]}
                     >
                         <Logo height="450" />

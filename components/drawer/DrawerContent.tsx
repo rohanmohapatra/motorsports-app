@@ -1,4 +1,4 @@
-import { Image } from '@gluestack-ui/themed';
+import { Image, View } from '@gluestack-ui/themed';
 import {
     DrawerContentComponentProps,
     DrawerContentScrollView,
@@ -23,14 +23,18 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
     });
 
     return (
-        <DrawerContentScrollView>
-            <Image
-                source={require('../../assets/common/triangle.png')}
-                size="sm"
-                pb="$5"
-                tintColor={darkBackground}
-                alt="Logo"
-            />
+        <DrawerContentScrollView {...props}>
+            <View width="$full" p="$3">
+                <Image
+                    source={require('../../assets/common/triangle.png')}
+                    width={64}
+                    height={64}
+                    pb="$5"
+                    tintColor={darkBackground}
+                    alt="Logo"
+                    resizeMode="contain"
+                />
+            </View>
 
             <DrawerItem
                 label="Home"
