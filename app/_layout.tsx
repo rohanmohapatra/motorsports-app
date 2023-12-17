@@ -1,6 +1,14 @@
-import { GluestackUIProvider } from '@gluestack-ui/themed';
-import { Slot, SplashScreen } from 'expo-router';
+import {
+    GluestackUIProvider,
+    Icon,
+    Pressable,
+    MenuIcon
+} from '@gluestack-ui/themed';
+import { SplashScreen } from 'expo-router';
+import Drawer from 'expo-router/drawer';
 
+import { DrawerContent } from '../components/drawer/DrawerContent';
+import { neonGreen } from '../components/theme/colors';
 import { config } from '../gluestack.config';
 
 SplashScreen.preventAutoHideAsync();
@@ -8,7 +16,26 @@ SplashScreen.preventAutoHideAsync();
 export default function Layout() {
     return (
         <GluestackUIProvider colorMode="dark" config={config}>
-            <Slot />
+            <Drawer
+                screenOptions={({ navigation }) => ({
+                    headerShown: true,
+                    headerTransparent: true,
+                    headerTitle: '',
+                    headerLeft: () => (
+                        <Pressable onPress={() => navigation.toggleDrawer()}>
+                            <Icon
+                                as={MenuIcon}
+                                m="$4"
+                                w={56}
+                                h={56}
+                                color="$white"
+                            />
+                        </Pressable>
+                    ),
+                    drawerStyle: { backgroundColor: neonGreen }
+                })}
+                drawerContent={DrawerContent}
+            />
         </GluestackUIProvider>
     );
 }
