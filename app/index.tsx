@@ -29,7 +29,7 @@ const Home = () => {
                                 fontFamily="Horizon"
                                 color={darkBackground}
                                 onPress={() => {
-                                    navigation.push('/gt3/mercedes-w13');
+                                    navigation.push('/f1/mercedes-w13');
                                 }}
                             >
                                 Explore F1 Cars
@@ -39,6 +39,7 @@ const Home = () => {
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
+                                fontSize={'$sm'}
                             >
                                 Explore Hypercars
                             </ButtonText>
