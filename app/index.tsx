@@ -1,8 +1,8 @@
 import { Box, VStack, Button, ButtonText } from '@gluestack-ui/themed';
 import { useRouter } from 'expo-router';
-
 import Logo from './logo.svg';
 import { Header } from '../components/home/Header';
+
 import { darkBackground, neonGreen } from '../components/theme/colors';
 
 const Home = () => {
@@ -28,14 +28,19 @@ const Home = () => {
                             fontFamily="Horizon"
                             color={darkBackground}
                             onPress={() => {
-                                navigation.push('/gt3/mercedes-w13');
+                                navigation.push('/f1/redbull-rb19');
                             }}
                         >
                             Explore F1 Cars
                         </ButtonText>
                     </Button>
+
                     <Button rounded="$full" bgColor={neonGreen}>
-                        <ButtonText fontFamily="Horizon" color={darkBackground}>
+                        <ButtonText
+                            fontFamily="Horizon"
+                            color={darkBackground}
+                            fontSize={'$sm'}
+                        >
                             Explore Hypercars
                         </ButtonText>
                     </Button>
