@@ -24,6 +24,7 @@ jobs:
               with:
                   commit-message: 'Bumps version to {{version}}'
                   skip-tag: 'true'
+                  patch-wording: 'patch,fixes,build,deps,ci'
               env:
                   GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
             - name: 'Output'
