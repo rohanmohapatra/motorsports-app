@@ -26,8 +26,8 @@ export default function Layout() {
                             <Icon
                                 as={MenuIcon}
                                 m="$4"
-                                w={56}
-                                h={56}
+                                w={40}
+                                h={40}
                                 color="$white"
                             />
                         </Pressable>
