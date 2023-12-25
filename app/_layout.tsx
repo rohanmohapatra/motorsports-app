@@ -28,6 +28,7 @@ export default function Layout() {
                                 m="$4"
                                 w={40}
                                 h={40}
+                                softShadow="4"
                                 color="$white"
                             />
                         </Pressable>
