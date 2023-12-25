@@ -2866,7 +2866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gluestack-style/animation-resolver@npm:^1.0.2":
+"@gluestack-style/animation-resolver@npm:1.0.3":
   version: 1.0.3
   resolution: "@gluestack-style/animation-resolver@npm:1.0.3"
   peerDependencies:
@@ -2875,7 +2875,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gluestack-style/legend-motion-animation-driver@npm:^1.0.2":
+"@gluestack-style/legend-motion-animation-driver@npm:1.0.3":
   version: 1.0.3
   resolution: "@gluestack-style/legend-motion-animation-driver@npm:1.0.3"
   peerDependencies:
@@ -2911,9 +2911,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gluestack-ui/actionsheet@npm:^0.2.31":
-  version: 0.2.31
-  resolution: "@gluestack-ui/actionsheet@npm:0.2.31"
+"@gluestack-ui/actionsheet@npm:0.2.35":
+  version: 0.2.35
+  resolution: "@gluestack-ui/actionsheet@npm:0.2.35"
   dependencies:
     "@gluestack-ui/hooks": ^0.1.7
     "@gluestack-ui/overlay": ^0.1.12
@@ -2925,7 +2925,7 @@ __metadata:
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: 7cdca01721c415e8350b6b93ef344b38ac6d60ec4f369a9be84fa6e406044c232b1b3a642c2f8e977294f182d1ddede059dd2c00275583b4cb6c0050b2cf1bb2
+  checksum: 67346a938c461f12ae2b41419f441e4d3b715f2d29880112d696c8711602b5c6032aa7c7a17e941ca6f7e137dc6669ab68ae3ea0643dd5786fe7afa7d2da6ac3
   languageName: node
   linkType: hard
 
@@ -2968,9 +2968,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gluestack-ui/button@npm:^0.1.33":
-  version: 0.1.33
-  resolution: "@gluestack-ui/button@npm:0.1.33"
+"@gluestack-ui/button@npm:0.1.34":
+  version: 0.1.34
+  resolution: "@gluestack-ui/button@npm:0.1.34"
   dependencies:
     "@gluestack-ui/utils": 0.1.12
     "@react-native-aria/focus": ^0.2.9
@@ -2978,7 +2978,7 @@ __metadata:
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: 250d4c8b7d655c0b3af133207c8b062fe8f97c8472eb5a78e531d9ffd2d5f4cda288dda3d2a64e22eb67fa7275fd2eccbe079b65a658dc24837e72149e6f1cc8
+  checksum: c81f9e692f804fb2946a686fd9af5b992ef5c72ce9c6e476fe3cc73aaf559e19935ff4ed00349fcc062f80c79e02738275bba6013698cf85bc4bdc4a2a20d42d
   languageName: node
   linkType: hard
 
@@ -3356,18 +3356,18 @@ __metadata:
   linkType: hard
 
 "@gluestack-ui/themed@npm:latest":
-  version: 1.0.25
-  resolution: "@gluestack-ui/themed@npm:1.0.25"
+  version: 1.0.31
+  resolution: "@gluestack-ui/themed@npm:1.0.31"
   dependencies:
     "@expo/html-elements": latest
-    "@gluestack-style/animation-resolver": ^1.0.2
-    "@gluestack-style/legend-motion-animation-driver": ^1.0.2
+    "@gluestack-style/animation-resolver": 1.0.3
+    "@gluestack-style/legend-motion-animation-driver": 1.0.3
     "@gluestack-ui/accordion": ^0.0.2
-    "@gluestack-ui/actionsheet": ^0.2.31
+    "@gluestack-ui/actionsheet": 0.2.35
     "@gluestack-ui/alert": ^0.1.12
     "@gluestack-ui/alert-dialog": ^0.1.23
     "@gluestack-ui/avatar": ^0.1.15
-    "@gluestack-ui/button": ^0.1.33
+    "@gluestack-ui/button": 0.1.34
     "@gluestack-ui/checkbox": ^0.1.22
     "@gluestack-ui/divider": ^0.1.8
     "@gluestack-ui/fab": ^0.1.17
@@ -3402,7 +3402,7 @@ __metadata:
     react-native: ">=0.72"
     react-native-svg: ">=13.4.0"
     react-native-web: ">=0.19"
-  checksum: e968d506244526efe9160b63f9a844181c3e2b8bce78b1154985844ed7f9ce5b41b1a0a56af66d60f69af47f5b195d69df9108826fef3dddf56b8e3e14a5ff60
+  checksum: b884ed5849132b7e9aa7148fadfe3c44bb39ae05e2fb3ae528ed97b974faeb49e3c902096e85a30b755e3dc368b3af8de80dbc0d5553281f375209c05de0365a
   languageName: node
   linkType: hard
 
