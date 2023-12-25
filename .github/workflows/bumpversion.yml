@@ -12,17 +12,19 @@ jobs:
 
         steps:
             - name: 'Checkout source code'
-              uses: 'actions/checkout@v2'
+              uses: 'actions/checkout@v3'
               with:
+                  persist-credentials: false
                   ref: ${{ github.ref }}
             - name: 'cat package.json'
               run: cat ./package.json
             - name: 'Automated Version Bump'
               id: version-bump
-              uses: 'phips28/gh-action-bump-version@master'
+              uses: 'phips28/gh-action-bump-version@v9.1.3'
               with:
+                  commit-message: 'Bumps version to {{version}}'
                   skip-tag: 'true'
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
             - name: 'Output'
               run: cat ./package.json
