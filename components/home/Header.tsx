@@ -1,4 +1,5 @@
 import { Text, VStack } from '@gluestack-ui/themed';
+
 import { neonGreen } from '../theme/colors';
 
 export const Header = () => {

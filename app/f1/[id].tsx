@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable */
+
 import { Box, Text, Image } from '@gluestack-ui/themed';
+import React, { useEffect, useState } from 'react';
 import { useGlobalSearchParams } from 'expo-router';
 import Swiper from 'react-native-swiper';
 import Logo from '../../assets/f1/F1.svg';
@@ -196,11 +198,10 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
 };
 
 const f1 = () => {
-    const { id } = useGlobalSearchParams();
+    // const { id } = useGlobalSearchParams();
 
     const [f1Db] = useState(new F1());
     const [carDetailsList, setCarDetailsList] = useState<F1Car[]>([]);
-
     useEffect(() => {
         const fetchCarDetails = async () => {
             const cars = [
