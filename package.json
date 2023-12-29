@@ -1,6 +1,6 @@
 {
     "name": "expo-app",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "main": "index.tsx",
     "scripts": {
         "start": "expo start",
