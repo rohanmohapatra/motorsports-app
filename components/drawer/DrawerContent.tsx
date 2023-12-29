@@ -63,7 +63,9 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
             <DrawerItem
                 label="Explore Hypercars"
                 onPress={() => {
-                    navigation.navigate('index');
+                    navigation.navigate('hypercar/[id]', {
+                        id: 'acura-arx-06'
+                    });
                     setConfig({ ...initialDrawerConfig, hyper: true });
                 }}
                 focused={config.hyper}

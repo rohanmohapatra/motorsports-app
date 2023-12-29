@@ -38,7 +38,13 @@ const Home = () => {
                                 Explore F1 Cars
                             </ButtonText>
                         </Button>
-                        <Button rounded="$full" bgColor={neonGreen}>
+                        <Button
+                            rounded="$full"
+                            bgColor={neonGreen}
+                            onPress={() => {
+                                navigation.push('/hypercar/ferrari-499p');
+                            }}
+                        >
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
