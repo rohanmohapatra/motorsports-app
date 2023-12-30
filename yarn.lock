@@ -9463,7 +9463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-linear-gradient@npm:12.3.0":
+"expo-linear-gradient@npm:12.3.0, expo-linear-gradient@npm:~12.3.0":
   version: 12.3.0
   resolution: "expo-linear-gradient@npm:12.3.0"
   peerDependencies:
@@ -16429,6 +16429,7 @@ __metadata:
     expo-app-loading: ^2.1.1
     expo-constants: ~14.4.2
     expo-font: ~11.4.0
+    expo-linear-gradient: ~12.3.0
     expo-linking: ~5.0.2
     expo-router: ^2.0.0
     expo-splash-screen: ~0.20.5

@@ -56,7 +56,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
-                                navigation.push('/gt3/mclaren-720s');
+                                navigation.push('/gt3/mclaren-720s-gt3-evo');
                             }}
                         >
                             <ButtonText

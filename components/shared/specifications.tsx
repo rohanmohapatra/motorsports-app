@@ -1,4 +1,5 @@
 import { HStack, Text, VStack } from '@gluestack-ui/themed';
+import { ReactElement } from 'react';
 
 import ChassisLogo from '../../assets/common/chassis.svg';
 import BatteryLogo from '../../assets/common/electric.svg';
@@ -74,5 +75,41 @@ export const Electric = ({ text }: SingleProps) => {
                 {text}
             </Text>
         </HStack>
+    );
+};
+
+interface GT3RoadcarProps {
+    children: ReactElement[] | string | string[];
+}
+
+export const GT3RoadcarLabelContainer = ({ children }: GT3RoadcarProps) => {
+    return (
+        <HStack
+            justifyContent="space-between"
+            w={300}
+            borderColor={neonGreenLight}
+            borderWidth="$2"
+            rounded="$lg"
+            padding="$2"
+            alignItems="center"
+        >
+            {children}
+        </HStack>
+    );
+};
+
+export const GT3RoadcarLabel = ({ children }: GT3RoadcarProps) => {
+    return (
+        <Text w={145} fontSize={12} opacity={0.8}>
+            {children}
+        </Text>
+    );
+};
+
+export const GT3RoadcarText = ({ children }: GT3RoadcarProps) => {
+    return (
+        <Text w="$32" fontSize={10} textAlign="right">
+            {children}
+        </Text>
     );
 };
