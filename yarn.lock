@@ -2917,12 +2917,12 @@ __metadata:
   linkType: hard
 
 "@gluestack-style/react@npm:^1.0.18, @gluestack-style/react@npm:latest":
-  version: 1.0.28
-  resolution: "@gluestack-style/react@npm:1.0.28"
+  version: 1.0.30
+  resolution: "@gluestack-style/react@npm:1.0.30"
   dependencies:
     inline-style-prefixer: ^6.0.1
     normalize-css-color: ^1.0.2
-  checksum: 8f586a89959a1844ec2e7360aa0cc256fd8cb9cac6c178c896d27f99896a7cf5a454db7c838baf444dfd0fb95d80c499972c51e5dc27014d2645de687b5967bb
+  checksum: ebf3b03a97cd0dafd564e0a28247f9b75fcf6d71bf2817a88f6a893678aba2902202c2933feca527d4c2718022aefe2156b12cd50fd27f8ba5955ab82bc2c31d
   languageName: node
   linkType: hard
 
