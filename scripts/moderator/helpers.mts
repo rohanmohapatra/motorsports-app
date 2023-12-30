@@ -44,4 +44,19 @@ export const gt3 = [
     { field: 'transmission_roadcar', question: 'Roadcar Transmission?' }
 ];
 
-export type SeriesType = symbol | 'f1' | 'gt3' | 'hypercar';
+export const formula_e = [
+    { field: 'team_name_primary', question: 'Team Name First Line?' },
+    { field: 'team_name_secondary', question: 'Team Name Second Line?' },
+    { field: 'image', question: 'Car Image?' },
+    { field: 'drivers', question: 'Drivers? (Comma-separated)', array: true },
+    { field: 'battery_supplier', question: 'Battery Supplier?' },
+    {
+        field: 'battery_energy',
+        question: 'How much energy does the Battery generate?'
+    },
+    { field: 'electric_power', question: 'Electric Power?' },
+    { field: 'regeneration_power', question: 'Regeneration Power?' },
+    { field: 'powertrain', question: 'Powertrain?' }
+];
+
+export type SeriesType = symbol | 'f1' | 'gt3' | 'hypercar' | 'formulae';

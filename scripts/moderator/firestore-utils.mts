@@ -10,7 +10,7 @@ import {
 } from 'firebase/firestore';
 import dotenv from 'dotenv';
 
-export type FireStoreDocument = { [key: string]: string };
+export type FireStoreDocument = { [key: string]: any };
 dotenv.config();
 dotenv.config({ path: `.env.local`, override: true });
 

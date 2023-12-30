@@ -1,6 +1,6 @@
 import { select, text, spinner, isCancel, cancel } from '@clack/prompts';
 
-import { f1, hypercar, gt3, SeriesType } from './helpers.mjs';
+import { f1, hypercar, gt3, SeriesType, formula_e } from './helpers.mjs';
 import { FireStoreDocument, pushToFirebase } from './firestore-utils.mjs';
 
 export const addToFirestore = async (type: SeriesType) => {
@@ -83,6 +83,34 @@ export const addToFirestore = async (type: SeriesType) => {
                 'model'
             ].replaceAll(' ', '-')}`
         );
+        spin.stop(`Firestore push completed!`);
+    }
+
+    if (type === 'formulae') {
+        for (let i = 0; i < formula_e.length; i++) {
+            const askedField = await text({
+                message: formula_e[i].question
+            });
+
+            document[formula_e[i].field] = askedField.toString();
+            if (isCancel(askedField)) {
+                cancel('Operation cancelled.');
+                process.exit(0);
+            }
+
+            if (!!formula_e[i].array) {
+                document[formula_e[i].field] =
+                    document[formula_e[i].field].split(',');
+            }
+        }
+
+        const key = await text({
+            message: 'What is the key?'
+        });
+
+        const spin = spinner();
+        spin.start('Starting the firestore push...');
+        await pushToFirebase('formulae', document, String(key));
         spin.stop(`Firestore push completed!`);
     }
 };
