@@ -4,14 +4,11 @@ import {
     Pressable,
     MenuIcon
 } from '@gluestack-ui/themed';
-import { SplashScreen } from 'expo-router';
 import Drawer from 'expo-router/drawer';
 
 import { DrawerContent } from '../components/drawer/DrawerContent';
 import { neonGreen } from '../components/theme/colors';
 import { config } from '../gluestack.config';
-
-SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
     return (
