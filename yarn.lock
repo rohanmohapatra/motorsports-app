@@ -3865,8 +3865,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@phenomnomnominal/tsquery@npm:^5.0.0":
   version: 5.0.1
   resolution: "@phenomnomnominal/tsquery@npm:5.0.1"
@@ -3878,7 +3876,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -5822,11 +5819,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
-  version: 20.10.6
-  resolution: "@types/node@npm:20.10.6"
+  version: 20.10.7
+  resolution: "@types/node@npm:20.10.7"
   dependencies:
     undici-types: ~5.26.4
-  checksum: ada40e4ccbda3697dca88f8d13f4c996c493be6fbc15f5f5d3b91096d56bd700786a2c148a92a2b4c5d1f133379e63f754a786b3aebfc6a7d09fc7ea16dc017b
+  checksum: 86f4f96f5169538f47bbd652ab8e3712cd307701481ff3e9ce0c1ea7d8424a38b5ac4a1d33088cdd9ea1bfe68fd27bbae005a21969aa6d9a36295904da6f09f2
   languageName: node
   linkType: hard
 
@@ -5876,11 +5873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"@types/semver@npm:^7.5.0":
-=======
 "@types/semver@npm:^7.3.12, @types/semver@npm:^7.5.0":
->>>>>>> main
   version: 7.5.6
   resolution: "@types/semver@npm:7.5.6"
   checksum: 563a0120ec0efcc326567db2ed920d5d98346f3638b6324ea6b50222b96f02a8add3c51a916b6897b51523aad8ac227d21d3dcf8913559f1bfc6c15b14d23037
@@ -5988,11 +5981,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"@types/yargs@npm:^17.0.8":
-=======
 "@types/yargs@npm:^17.0.0, @types/yargs@npm:^17.0.8":
->>>>>>> main
   version: 17.0.32
   resolution: "@types/yargs@npm:17.0.32"
   dependencies:
@@ -6026,8 +6015,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/experimental-utils@npm:^5.0.0":
   version: 5.62.0
   resolution: "@typescript-eslint/experimental-utils@npm:5.62.0"
@@ -6039,7 +6026,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/parser@npm:^6.0.0, @typescript-eslint/parser@npm:^6.4.0":
   version: 6.18.0
   resolution: "@typescript-eslint/parser@npm:6.18.0"
@@ -6058,8 +6044,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/scope-manager@npm:5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/scope-manager@npm:5.62.0"
@@ -6070,7 +6054,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/scope-manager@npm:6.18.0":
   version: 6.18.0
   resolution: "@typescript-eslint/scope-manager@npm:6.18.0"
@@ -6098,8 +6081,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/types@npm:5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/types@npm:5.62.0"
@@ -6107,7 +6088,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/types@npm:6.18.0":
   version: 6.18.0
   resolution: "@typescript-eslint/types@npm:6.18.0"
@@ -6115,8 +6095,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/typescript-estree@npm:5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/typescript-estree@npm:5.62.0"
@@ -6135,7 +6113,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/typescript-estree@npm:6.18.0":
   version: 6.18.0
   resolution: "@typescript-eslint/typescript-estree@npm:6.18.0"
@@ -6155,8 +6132,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/utils@npm:5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/utils@npm:5.62.0"
@@ -6175,7 +6150,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/utils@npm:6.18.0":
   version: 6.18.0
   resolution: "@typescript-eslint/utils@npm:6.18.0"
@@ -6193,8 +6167,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "@typescript-eslint/visitor-keys@npm:5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/visitor-keys@npm:5.62.0"
@@ -6205,7 +6177,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "@typescript-eslint/visitor-keys@npm:6.18.0":
   version: 6.18.0
   resolution: "@typescript-eslint/visitor-keys@npm:6.18.0"
@@ -7486,9 +7457,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001565":
-  version: 1.0.30001574
-  resolution: "caniuse-lite@npm:1.0.30001574"
-  checksum: 4064719755371a9716446ee79714ff5cee347861492d6325c2e3db00c37cb27f184742f53f2b6e4c15cc2e1a47fae32cc44c9b15e957a9290982bf4108933245
+  version: 1.0.30001575
+  resolution: "caniuse-lite@npm:1.0.30001575"
+  checksum: dff59713a89bdf86dd497bc4b8483539efe601f7f454adffe692b21224a34e8403366ce057cbf64a46b0765f0b44a3981ba65437cb1ecec127a225ea654be8a8
   languageName: node
   linkType: hard
 
@@ -9020,8 +8991,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "eslint-etc@npm:^5.1.0":
   version: 5.2.1
   resolution: "eslint-etc@npm:5.2.1"
@@ -9036,7 +9005,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "eslint-import-resolver-node@npm:^0.3.9":
   version: 0.3.9
   resolution: "eslint-import-resolver-node@npm:0.3.9"
@@ -9085,8 +9053,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "eslint-plugin-etc@npm:^2.0.3":
   version: 2.0.3
   resolution: "eslint-plugin-etc@npm:2.0.3"
@@ -9104,7 +9070,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "eslint-plugin-import@npm:^2.25.2, eslint-plugin-import@npm:^2.27.5":
   version: 2.29.1
   resolution: "eslint-plugin-import@npm:2.29.1"
@@ -9233,11 +9198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"eslint-scope@npm:5.1.1":
-=======
 "eslint-scope@npm:5.1.1, eslint-scope@npm:^5.1.1":
->>>>>>> main
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
   dependencies:
@@ -9349,11 +9310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"esquery@npm:^1.4.2":
-=======
 "esquery@npm:^1.4.0, esquery@npm:^1.4.2":
->>>>>>> main
   version: 1.5.0
   resolution: "esquery@npm:1.5.0"
   dependencies:
@@ -15076,8 +15033,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "requireindex@npm:~1.2.0":
   version: 1.2.0
   resolution: "requireindex@npm:1.2.0"
@@ -15085,7 +15040,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -15457,11 +15411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"semver@npm:^7.0.0, semver@npm:^7.3.5, semver@npm:^7.3.8, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4":
-=======
 "semver@npm:^7.0.0, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4":
->>>>>>> main
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -16452,10 +16402,7 @@ __metadata:
     eslint: ^8.56.0
     eslint-config-standard-with-typescript: latest
     eslint-config-universe: ^12.0.0
-<<<<<<< HEAD
-=======
     eslint-plugin-etc: ^2.0.3
->>>>>>> main
     eslint-plugin-import: ^2.25.2
     eslint-plugin-n: "^15.0.0 || ^16.0.0 "
     eslint-plugin-promise: ^6.0.0
@@ -16485,10 +16432,7 @@ __metadata:
     ts-case-convert: ^2.0.6
     ts-node: ^10.9.2
     typescript: ^5.1.3
-<<<<<<< HEAD
     yarn: ^1.22.21
-=======
->>>>>>> main
   languageName: unknown
   linkType: soft
 
@@ -16679,9 +16623,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
-=======
 "tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -16690,15 +16631,12 @@ __metadata:
   linkType: hard
 
 "tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
->>>>>>> main
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
 "tsutils-etc@npm:^1.4.1":
   version: 1.4.2
   resolution: "tsutils-etc@npm:1.4.2"
@@ -16726,7 +16664,6 @@ __metadata:
   languageName: node
   linkType: hard
 
->>>>>>> main
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -17768,11 +17705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"yargs@npm:^17.6.2, yargs@npm:^17.7.2":
-=======
 "yargs@npm:^17.0.0, yargs@npm:^17.6.2, yargs@npm:^17.7.2":
->>>>>>> main
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:
@@ -17787,7 +17720,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
 "yarn@npm:^1.22.21":
   version: 1.22.21
   resolution: "yarn@npm:1.22.21"
@@ -17798,8 +17730,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-=======
->>>>>>> main
 "yn@npm:3.1.1":
   version: 3.1.1
   resolution: "yn@npm:3.1.1"

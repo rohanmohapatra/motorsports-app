@@ -52,7 +52,7 @@ interface BatteryProps extends SingleProps {
 export const Battery = ({ text, energy }: BatteryProps) => {
     return (
         <HStack alignItems="center" space="xl">
-            <BatteryLogo height="50" width="32" fill={'black'} />
+            <BatteryLogo height="50" width="32" fill="black" />
             <VStack w="$64">
                 <Text color="black" fontSize="$xs" fontFamily="Horizon">
                     {text}
@@ -73,7 +73,7 @@ export const Battery = ({ text, energy }: BatteryProps) => {
 export const PowerTrain = ({ text }: SingleProps) => {
     return (
         <HStack alignItems="center" space="xl">
-            <ChassisLogo height="32" width="32" fill={'black'} />
+            <ChassisLogo height="32" width="32" fill="black" />
             <VStack w="$64">
                 <Text color="black" fontSize="$xs" fontFamily="Horizon">
                     {text}
@@ -94,7 +94,7 @@ export const PowerTrain = ({ text }: SingleProps) => {
 export const Chassis = ({ text }: SingleProps) => {
     return (
         <HStack alignItems="center" space="xl">
-            <ChassisLogo height="32" width="32" fill={'white'} />
+            <ChassisLogo height="32" width="32" fill="white" />
             <HStack w="$56">
                 <Text color="white" fontSize="$sm" fontFamily="Horizon">
                     {text}
@@ -115,7 +115,7 @@ export const Chassis = ({ text }: SingleProps) => {
 export const Electric = ({ text }: SingleProps) => {
     return (
         <HStack alignItems="center" space="xl">
-            <BatteryLogo height="32" width="32" fill={'white'} />
+            <BatteryLogo height="32" width="32" fill="white" />
             <Text color="white" fontSize="$xs" fontFamily="Horizon" w="$56">
                 {text}
             </Text>
@@ -139,13 +139,7 @@ export const Drivers = ({
             <Text color={headingColor} fontSize="$sm" fontFamily="Horizon">
                 Drivers
             </Text>
-            <HStack
-                mt="-$5"
-                // alignContent="space-between"
-                width="$full"
-                space="4xl"
-                // justifyContent="center"
-            >
+            <HStack mt="-$5" width="$full" space="4xl">
                 {drivers.map((driver, index) => (
                     <VStack key={index} alignItems="center">
                         <Text
