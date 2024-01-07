@@ -1,6 +1,5 @@
 import { Box, Text, Image } from '@gluestack-ui/themed';
 import React, { useEffect, useState } from 'react';
-// import { useGlobalSearchParams } from 'expo-router';
 import Swiper from 'react-native-swiper';
 import { objectToCamel } from 'ts-case-convert';
 
@@ -22,32 +21,25 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
             style={{
                 backgroundColor: 'black'
             }}
-            // tintColor="gray"
-            // source={require('../../assets/common/triangle.png')}
-            // resizeMode="cover"
         >
             <Box h="$full" w="$full">
                 <Image
                     size="full"
                     source={require('../../assets/f1/formula1-mercedes.jpeg')}
-                    // {carDetails.image}
                     height={300}
                 />
 
                 <Box alignItems="center">
                     <Logo height="100" width="100" />
                     <Text
-                        // maxWidth={'$96'}
                         fontFamily="Horizon"
                         color={neonGreen}
                         fontSize="$2xl"
                     >
                         {carDetails?.teamName}
-                        {/* {id} */}
                     </Text>
                     <Text fontFamily="Horizon" fontSize="$2xl">
                         {carDetails?.car}
-                        {/* {data.model} */}
                     </Text>
                 </Box>
 
@@ -70,7 +62,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                                     fontFamily="Horizon"
                                 >
                                     {carDetails?.engineType}
-                                    {/* {data['specifications'][0].value} */}
                                 </Text>
                                 <Text
                                     fontSize="$xs"
@@ -91,7 +82,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                                     fontFamily="Horizon"
                                 >
                                     {carDetails?.engineHorsepower} HP
-                                    {/* {data['specifications'][3].value} */}
                                 </Text>
                                 <Text
                                     color={neonGreen}
@@ -114,7 +104,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                                 fontFamily="Horizon"
                             >
                                 {carDetails?.engine}
-                                {/* {data['specifications'][1].value} */}
                             </Text>
                             <Text
                                 color={neonGreen}
@@ -122,7 +111,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                                 fontFamily="Horizon"
                             >
                                 {carDetails?.engineDisplacement}
-                                {/* {data['specifications'][5].value} */}
                             </Text>
                         </Box>
                     </Box>
@@ -130,22 +118,16 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                         <Transmission height="40" width="100" />
                         <Text color="white" fontSize="$xs" fontFamily="Horizon">
                             {carDetails?.electricMotor}
-                            {/* {data['specifications'][6].value} */}
                         </Text>
                     </Box>
                     <Box flexDirection="row" mt="$3" alignItems="center">
                         <Electric height="50" width="100" />
                         <Text color="white" fontSize="$xs" fontFamily="Horizon">
                             {carDetails?.transmission}
-                            {/* {data['specifications'][2].value} */}
                         </Text>
                     </Box>
                 </Box>
-                <Box
-                    // maxWidth={'$96'}
-                    alignItems="center"
-                    justifyContent="center"
-                >
+                <Box alignItems="center" justifyContent="center">
                     <Text color={neonGreen} fontSize="$sm" fontFamily="Horizon">
                         Drivers
                     </Text>
@@ -154,8 +136,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                         mt="$3"
                         margin="$10"
                         alignItems="center"
-                        // padding={'$10'}
-                        // justifyContent="space-between"
                     >
                         <Text
                             marginRight="$10"
@@ -165,17 +145,14 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                             fontFamily="Horizon"
                         >
                             {carDetails?.drivers[0]}
-                            {/* {data['specifications'][4].value[0]} */}
                         </Text>
                         <Text
                             maxWidth="$48"
-                            // w={'50%'}
                             color="white"
                             fontSize="$xs"
                             fontFamily="Horizon"
                         >
                             {carDetails?.drivers[1] || 'Default Team Name'}
-                            {/* {data['specifications'][4].value[1]} */}
                         </Text>
                     </Box>
                 </Box>
@@ -185,8 +162,6 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
 };
 
 const F1Page = () => {
-    // const { id } = useGlobalSearchParams();
-
     const [f1Db] = useState(new F1());
     const [carDetailsList, setCarDetailsList] = useState<F1Car[]>([]);
 
@@ -214,7 +189,6 @@ const F1Page = () => {
         fetchCarDetails();
     }, []);
 
-    // console.log(carDetailsList);
     return (
         <Swiper loop={false}>
             {carDetailsList.map((carDetails, index) => (
