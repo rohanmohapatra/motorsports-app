@@ -1,4 +1,4 @@
-import { Box, Text, Image, View } from '@gluestack-ui/themed';
+import { Box, Text, Image } from '@gluestack-ui/themed';
 import React, { useEffect, useState } from 'react';
 // import { useGlobalSearchParams } from 'expo-router';
 import Swiper from 'react-native-swiper';
@@ -189,7 +189,6 @@ const F1Page = () => {
 
     const [f1Db] = useState(new F1());
     const [carDetailsList, setCarDetailsList] = useState<F1Car[]>([]);
-    const [swipeIndex, setSwipeIndex] = useState(0);
 
     useEffect(() => {
         const fetchCarDetails = async () => {
