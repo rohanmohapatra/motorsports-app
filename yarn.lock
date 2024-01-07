@@ -3033,12 +3033,12 @@ __metadata:
   linkType: hard
 
 "@gluestack-ui/config@npm:latest":
-  version: 1.0.8
-  resolution: "@gluestack-ui/config@npm:1.0.8"
+  version: 1.0.11
+  resolution: "@gluestack-ui/config@npm:1.0.11"
   peerDependencies:
     "@gluestack-style/react": ">=1.0"
     "@gluestack-ui/themed": ">=1.0.20"
-  checksum: 6ff7529be4461778e6d58b3a62a3bc3d566086c27f8909fb625425f6ca6c2426ec55830221d84e138704fb9f927e3e59b66ca1a345b10131234e6490649daf9f
+  checksum: 450535d358ce98bdda1bf12c5821ca3fc3aa6b8fec34e741a836447d548aad30ec579dc029c1f81b7fe1037b3ddc349f5d8fe991c47c8d5dcce8575fbaa4a5be
   languageName: node
   linkType: hard
 
