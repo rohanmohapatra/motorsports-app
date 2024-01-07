@@ -1,10 +1,10 @@
 import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed';
-import Swiper from 'react-native-swiper';
 import { useEffect, useState } from 'react';
+import Swiper from 'react-native-swiper';
 import { objectToCamel } from 'ts-case-convert';
 
-import FELogo from '../../assets/motorsport-logos/FE.svg';
 import GEN3Logo from '../../assets/common/gen3_electric.svg';
+import FELogo from '../../assets/motorsport-logos/FE.svg';
 import { Loader } from '../../components/shared/loader';
 import {
     Battery,

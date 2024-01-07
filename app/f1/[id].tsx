@@ -5,6 +5,7 @@ import Swiper from 'react-native-swiper';
 import { objectToCamel } from 'ts-case-convert';
 
 import Logo from '../../assets/f1/F1.svg';
+import { Loader } from '../../components/shared/loader';
 import {
     Drivers,
     Electric,
@@ -15,7 +16,6 @@ import { SpecificationsContainer } from '../../components/shared/specifications-
 import { neonGreen } from '../../components/theme/colors';
 import { F1 } from '../../firebase/f1';
 import { F1Car } from '../../models/F1Car';
-import { Loader } from '../../components/shared/loader';
 
 const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
     if (!carDetails) {
