@@ -2,3 +2,4 @@ node_modules
 .expo
 .yarn/cache
 .env.local
+.DS_Store

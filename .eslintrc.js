@@ -4,6 +4,7 @@ module.exports = {
         es2021: true
     },
     extends: ['universe/native'],
+    plugins: ['etc'],
     overrides: [
         {
             env: {
@@ -20,6 +21,7 @@ module.exports = {
         sourceType: 'module'
     },
     rules: {
-        'no-unused-vars': 'error'
+        'no-unused-vars': 'error',
+        'etc/no-commented-out-code': 'error'
     }
 };
