@@ -12,7 +12,7 @@ import {
     PowerTrain
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { darkBlue, white } from '../../components/theme/colors';
+import { flashBlue } from '../../components/theme/colors';
 import { Formulae } from '../../firebase/formulae';
 import { FormulaeCar } from '../../models/FormulaeCar';
 
@@ -36,7 +36,7 @@ const FormulaeDetails = ({
                 alt={`${carDetails.teamNamePrimary} ${carDetails.teamNamePrimary}`}
             />
 
-            <SpecificationsContainer tintColor={darkBlue} background={'$white'}>
+            <SpecificationsContainer theme="light">
                 <VStack
                     alignItems="center"
                     h="$full"
@@ -49,7 +49,7 @@ const FormulaeDetails = ({
                     <VStack alignItems="center">
                         <Text
                             fontFamily="Horizon"
-                            color={darkBlue}
+                            color={flashBlue}
                             fontSize={40}
                             lineHeight="$3xl"
                         >
@@ -83,7 +83,7 @@ const FormulaeDetails = ({
                                 fontFamily="Horizon"
                                 fontSize="$2xs"
                                 mt="-$2"
-                                color={darkBlue}
+                                color={flashBlue}
                             >
                                 Power
                             </Text>
@@ -101,7 +101,7 @@ const FormulaeDetails = ({
                                 fontFamily="Horizon"
                                 fontSize="$2xs"
                                 mt="-$2"
-                                color={darkBlue}
+                                color={flashBlue}
                             >
                                 Regeneration
                             </Text>
@@ -121,7 +121,7 @@ const FormulaeDetails = ({
                         <Drivers
                             drivers={carDetails.drivers}
                             textColor="black"
-                            headingColor={darkBlue}
+                            headingColor={flashBlue}
                         />
                     </VStack>
                     <GEN3Logo />

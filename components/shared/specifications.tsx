@@ -4,7 +4,7 @@ import ChassisLogo from '../../assets/common/chassis.svg';
 import BatteryLogo from '../../assets/common/electric.svg';
 import EngineLogo from '../../assets/common/engine.svg';
 import TransmissionLogo from '../../assets/common/transmission.svg';
-import { darkBlue, neonGreenLight } from '../theme/colors';
+import { flashBlue, neonGreenLight } from '../theme/colors';
 
 interface SingleProps {
     text: string;
@@ -58,7 +58,7 @@ export const Battery = ({ text, energy }: BatteryProps) => {
                     {text}
                 </Text>
                 <Text
-                    color={darkBlue}
+                    color={flashBlue}
                     fontSize="$2xs"
                     fontFamily="Horizon"
                     marginTop="-$1"
@@ -79,7 +79,7 @@ export const PowerTrain = ({ text }: SingleProps) => {
                     {text}
                 </Text>
                 <Text
-                    color={darkBlue}
+                    color={flashBlue}
                     fontSize="$2xs"
                     fontFamily="Horizon"
                     marginTop="-$1"

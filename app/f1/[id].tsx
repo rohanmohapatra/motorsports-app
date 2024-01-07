@@ -12,7 +12,7 @@ import {
     Transmission
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { neonGreen, darkBackground } from '../../components/theme/colors';
+import { neonGreen } from '../../components/theme/colors';
 import { F1 } from '../../firebase/f1';
 import { F1Car } from '../../models/F1Car';
 import { Loader } from '../../components/shared/loader';
@@ -31,10 +31,7 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                 resizeMode="cover"
                 alt={`${carDetails.brand} ${carDetails.model}`}
             />
-            <SpecificationsContainer
-                tintColor={neonGreen}
-                background={darkBackground}
-            >
+            <SpecificationsContainer theme="dark">
                 <VStack
                     alignItems="center"
                     h="$full"
