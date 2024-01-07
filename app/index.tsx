@@ -24,7 +24,13 @@ const Home = () => {
                         <Header />
                     </Box>
                     <VStack space="md" width="$80" pt="$9">
-                        <Button rounded="$full" bgColor={neonGreen}>
+                        <Button
+                            rounded="$full"
+                            bgColor={neonGreen}
+                            onPress={() => {
+                                navigation.push('/gt3/mercedes-w13');
+                            }}
+                        >
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
@@ -35,7 +41,13 @@ const Home = () => {
                                 Explore F1 Cars
                             </ButtonText>
                         </Button>
-                        <Button rounded="$full" bgColor={neonGreen}>
+                        <Button
+                            rounded="$full"
+                            bgColor={neonGreen}
+                            onPress={() => {
+                                navigation.push('/hypercar/ferrari-499p');
+                            }}
+                        >
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
@@ -44,13 +56,16 @@ const Home = () => {
                                 Explore Hypercars
                             </ButtonText>
                         </Button>
-                        <Button rounded="$full" bgColor={neonGreen}>
+                        <Button
+                            rounded="$full"
+                            bgColor={neonGreen}
+                            onPress={() => {
+                                navigation.push('/gt3/mclaren-720s');
+                            }}
+                        >
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
-                                onPress={() => {
-                                    navigation.push('/gt3/mclaren-720s');
-                                }}
                             >
                                 Explore GT3 Cars
                             </ButtonText>

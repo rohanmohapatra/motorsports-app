@@ -1,4 +1,4 @@
-import { Image, View } from '@gluestack-ui/themed';
+import { Image, Text, View } from '@gluestack-ui/themed';
 import {
     DrawerContentComponentProps,
     DrawerContentScrollView,
@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/drawer';
 import { useState } from 'react';
 
+import { version } from '../../package.json';
 import { darkBackground } from '../theme/colors';
 
 // TODO: Make this DRY, too many same kind components
@@ -23,7 +24,12 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
     });
 
     return (
-        <DrawerContentScrollView {...props}>
+        <DrawerContentScrollView
+            {...props}
+            contentContainerStyle={{
+                flex: 1
+            }}
+        >
             <View width="$full" p="$3">
                 <Image
                     source={require('../../assets/common/triangle.png')}
@@ -36,54 +42,67 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 />
             </View>
 
-            <DrawerItem
-                label="Home"
-                onPress={() => {
-                    navigation.navigate('index');
-                    setConfig({ ...initialDrawerConfig, home: true });
-                }}
-                focused={config.home}
-                labelStyle={{
-                    fontFamily: 'Horizon',
-                    color: darkBackground
-                }}
-            />
-            <DrawerItem
-                label="Explore F1 Cars"
-                onPress={() => {
-                    navigation.navigate('gt3/[id]', { id: 'mercedes-w13' });
-                    setConfig({ ...initialDrawerConfig, f1: true });
-                }}
-                focused={config.f1}
-                labelStyle={{
-                    fontFamily: 'Horizon',
-                    color: darkBackground
-                }}
-            />
-            <DrawerItem
-                label="Explore Hypercars"
-                onPress={() => {
-                    navigation.navigate('index');
-                    setConfig({ ...initialDrawerConfig, hyper: true });
-                }}
-                focused={config.hyper}
-                labelStyle={{
-                    fontFamily: 'Horizon',
-                    color: darkBackground
-                }}
-            />
-            <DrawerItem
-                label="Explore GT3 Cars"
-                onPress={() => {
-                    navigation.navigate('gt3/[id]', { id: 'mclaren-720s' });
-                    setConfig({ ...initialDrawerConfig, gt3: true });
-                }}
-                focused={config.gt3}
-                labelStyle={{
-                    fontFamily: 'Horizon',
-                    color: darkBackground
-                }}
-            />
+            <View>
+                <DrawerItem
+                    label="Home"
+                    onPress={() => {
+                        navigation.navigate('index');
+                        setConfig({ ...initialDrawerConfig, home: true });
+                    }}
+                    focused={config.home}
+                    labelStyle={{
+                        fontFamily: 'Horizon',
+                        color: darkBackground
+                    }}
+                />
+                <DrawerItem
+                    label="Explore F1 Cars"
+                    onPress={() => {
+                        navigation.navigate('gt3/[id]', { id: 'mercedes-w13' });
+                        setConfig({ ...initialDrawerConfig, f1: true });
+                    }}
+                    focused={config.f1}
+                    labelStyle={{
+                        fontFamily: 'Horizon',
+                        color: darkBackground
+                    }}
+                />
+                <DrawerItem
+                    label="Explore Hypercars"
+                    onPress={() => {
+                        navigation.navigate('hypercar/[id]', {
+                            id: 'acura-arx-06'
+                        });
+                        setConfig({ ...initialDrawerConfig, hyper: true });
+                    }}
+                    focused={config.hyper}
+                    labelStyle={{
+                        fontFamily: 'Horizon',
+                        color: darkBackground
+                    }}
+                />
+                <DrawerItem
+                    label="Explore GT3 Cars"
+                    onPress={() => {
+                        navigation.navigate('gt3/[id]', { id: 'mclaren-720s' });
+                        setConfig({ ...initialDrawerConfig, gt3: true });
+                    }}
+                    focused={config.gt3}
+                    labelStyle={{
+                        fontFamily: 'Horizon',
+                        color: darkBackground
+                    }}
+                />
+            </View>
+            <Text
+                fontFamily="Horizon"
+                color={darkBackground}
+                position="absolute"
+                bottom={30}
+                left={25}
+            >
+                v{version}
+            </Text>
         </DrawerContentScrollView>
     );
 };

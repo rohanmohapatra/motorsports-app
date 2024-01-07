@@ -1,25 +1,32 @@
-import { Span } from '@expo/html-elements';
 import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed';
 import { useGlobalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { objectToCamel } from 'ts-case-convert';
 
-import GTLogo from '../../assets/motorsport-logos/GT.svg';
+import LMDHLogo from '../../assets/motorsport-logos/LMDH.svg';
+import LMHLogo from '../../assets/motorsport-logos/LMH.svg';
 import { Loader } from '../../components/shared/loader';
-import { Engine, Transmission } from '../../components/shared/specifications';
+import {
+    Chassis,
+    Electric,
+    Engine,
+    Transmission
+} from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
 import { neonGreenLight } from '../../components/theme/colors';
-import { GT3 } from '../../firebase/gt3';
-import { GT3Car } from '../../models/GT3Car';
+import { Hypercar } from '../../firebase/hypercar';
+import { HyperCar } from '../../models/HyperCar';
 
-const Gt3 = () => {
+const HypercarComponent = () => {
     const { id } = useGlobalSearchParams();
-    const [gt3Db] = useState(new GT3());
-    const [carDetails, setCarDetails] = useState<GT3Car | undefined>(undefined);
+    const [hypercarDb] = useState(new Hypercar());
+    const [carDetails, setCarDetails] = useState<HyperCar | undefined>(
+        undefined
+    );
 
     useEffect(() => {
-        gt3Db.getDetails(String(id)).then((data) => {
-            setCarDetails(objectToCamel(data ?? {}) as GT3Car);
+        hypercarDb.getDetails(String(id)).then((data) => {
+            setCarDetails(objectToCamel(data ?? {}) as HyperCar);
         });
     }, []);
 
@@ -28,11 +35,11 @@ const Gt3 = () => {
             <Image
                 size="full"
                 source={{
-                    uri: 'https://www.topgear.com/sites/default/files/2023/02/McLaren_720S_GT3_Evo_3.jpg?w=892&h=502'
+                    uri: carDetails.image
                 }}
                 height={350}
                 resizeMode="cover"
-                alt={`${carDetails.brand} ${carDetails.model}`}
+                alt={`${carDetails.teamName} ${carDetails.car}`}
             />
 
             <SpecificationsContainer>
@@ -43,15 +50,19 @@ const Gt3 = () => {
                     space="4xl"
                     paddingVertical="$5"
                 >
-                    <GTLogo />
+                    {carDetails.category === 'lmh' ? (
+                        <LMHLogo style={{ marginLeft: 14 }} height={42} />
+                    ) : (
+                        <LMDHLogo style={{ marginLeft: 14 }} height={42} />
+                    )}
                     <VStack alignItems="center">
                         <Text
                             fontFamily="Horizon"
                             color={neonGreenLight}
-                            fontSize={40}
+                            fontSize={36}
                             lineHeight="$3xl"
                         >
-                            {carDetails.brand}
+                            {carDetails.teamName}
                         </Text>
                         <Text
                             fontFamily="Horizon"
@@ -59,20 +70,7 @@ const Gt3 = () => {
                             lineHeight="$2xl"
                             color="white"
                         >
-                            {carDetails.model}
-                        </Text>
-                    </VStack>
-                    <VStack alignItems="center" paddingTop="$2">
-                        <Text fontFamily="Horizon" fontSize={12} color="white">
-                            Road Car
-                        </Text>
-                        <Text
-                            marginTop="-$2"
-                            fontFamily="Horizon"
-                            fontSize={12}
-                            color={neonGreenLight}
-                        >
-                            Specifications
+                            {carDetails.car}
                         </Text>
                     </VStack>
                     <HStack
@@ -80,66 +78,56 @@ const Gt3 = () => {
                         width="$full"
                         space="4xl"
                         justifyContent="center"
+                        paddingTop="$4"
                     >
                         <VStack alignItems="center">
                             <Text
                                 fontFamily="Horizon"
-                                fontSize="$md"
-                                color="white"
-                            >
-                                {carDetails.engineType}
-                                <Text as={Span}>°</Text>
-                            </Text>
-                            <Text
-                                fontFamily="Horizon"
-                                fontSize={8}
-                                mt="-$2"
-                                color={neonGreenLight}
-                            >
-                                Configuration
-                            </Text>
-                        </VStack>
-                        <VStack alignItems="center">
-                            <Text
-                                fontFamily="Horizon"
-                                fontSize="$md"
+                                fontSize="$lg"
                                 color="white"
                             >
                                 {carDetails.engineHorsepower} HP
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={8}
+                                fontSize={10}
                                 mt="-$2"
                                 color={neonGreenLight}
                             >
-                                Power
+                                ICE Power
                             </Text>
                         </VStack>
-                        <VStack alignItems="center">
+                        <VStack alignItems="center" ml="$8">
                             <Text
                                 fontFamily="Horizon"
-                                fontSize="$md"
+                                fontSize="$lg"
                                 color="white"
                             >
-                                {carDetails.engineTorque} NM
+                                {carDetails.electricHorsepower} HP
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={8}
+                                fontSize={10}
                                 mt="-$2"
                                 color={neonGreenLight}
                             >
-                                Torque
+                                Electric Power
                             </Text>
                         </VStack>
                     </HStack>
-                    <VStack alignItems="center" space="xl" paddingTop="$6">
+                    <VStack
+                        alignItems="center"
+                        space="xl"
+                        paddingTop="$2"
+                        w="$full"
+                    >
                         <Engine
                             text={carDetails.engine}
-                            displacement={carDetails.engineDisplacement}
+                            displacement={`${carDetails.engineDisplacement} ${carDetails.engineType}`}
                         />
+                        <Electric text={carDetails.electricMotor} />
                         <Transmission text={carDetails.transmission} />
+                        <Chassis text={carDetails.chassis} />
                     </VStack>
                 </VStack>
             </SpecificationsContainer>
@@ -149,4 +137,4 @@ const Gt3 = () => {
     );
 };
 
-export default Gt3;
+export default HypercarComponent;
