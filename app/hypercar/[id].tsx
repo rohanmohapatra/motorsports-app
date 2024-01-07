@@ -13,7 +13,7 @@ import {
     Transmission
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { neonGreenLight } from '../../components/theme/colors';
+import { neonGreenLight, darkBackground } from '../../components/theme/colors';
 import { Hypercar } from '../../firebase/hypercar';
 import { HyperCar } from '../../models/HyperCar';
 
@@ -42,7 +42,10 @@ const HypercarComponent = () => {
                 alt={`${carDetails.teamName} ${carDetails.car}`}
             />
 
-            <SpecificationsContainer>
+            <SpecificationsContainer
+                tintColor={neonGreenLight}
+                background={darkBackground}
+            >
                 <VStack
                     alignItems="center"
                     h="$full"

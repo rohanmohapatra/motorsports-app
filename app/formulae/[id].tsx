@@ -1,23 +1,26 @@
-import { Span } from '@expo/html-elements';
-import { Box, Text, Image, VStack, HStack } from '@gluestack-ui/themed';
-import React, { useEffect, useState } from 'react';
+import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed';
 import Swiper from 'react-native-swiper';
+import { useEffect, useState } from 'react';
 import { objectToCamel } from 'ts-case-convert';
 
-import Logo from '../../assets/f1/F1.svg';
+import FELogo from '../../assets/motorsport-logos/FE.svg';
+import GEN3Logo from '../../assets/common/gen3_electric.svg';
+import { Loader } from '../../components/shared/loader';
 import {
+    Battery,
     Drivers,
-    Electric,
-    Engine,
-    Transmission
+    PowerTrain
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { neonGreen, darkBackground } from '../../components/theme/colors';
-import { F1 } from '../../firebase/f1';
-import { F1Car } from '../../models/F1Car';
-import { Loader } from '../../components/shared/loader';
+import { darkBlue, white } from '../../components/theme/colors';
+import { Formulae } from '../../firebase/formulae';
+import { FormulaeCar } from '../../models/FormulaeCar';
 
-const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
+const FormulaeDetails = ({
+    carDetails
+}: {
+    carDetails: FormulaeCar | undefined;
+}) => {
     if (!carDetails) {
         return null;
     }
@@ -27,33 +30,38 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
             <Image
                 size="full"
                 source={require('../../assets/f1/formula1-mercedes.jpeg')}
+                // source={carDetails.image}
                 height={350}
                 resizeMode="cover"
-                alt={`${carDetails.brand} ${carDetails.model}`}
+                alt={`${carDetails.teamNamePrimary} ${carDetails.teamNamePrimary}`}
             />
-            <SpecificationsContainer
-                tintColor={neonGreen}
-                background={darkBackground}
-            >
+
+            <SpecificationsContainer tintColor={darkBlue} background={'$white'}>
                 <VStack
                     alignItems="center"
                     h="$full"
                     w="$full"
-                    space="4xl"
+                    space="2xl"
                     paddingVertical="$5"
+                    flex={1}
                 >
+                    <FELogo />
                     <VStack alignItems="center">
-                        <Logo height="100" width="100" />
                         <Text
-                            // maxWidth={'$96'}
                             fontFamily="Horizon"
-                            color={neonGreen}
-                            fontSize="$2xl"
+                            color={darkBlue}
+                            fontSize={40}
+                            lineHeight="$3xl"
                         >
-                            {carDetails?.teamName}
+                            {carDetails.teamNamePrimary}
                         </Text>
-                        <Text fontFamily="Horizon" fontSize="$2xl">
-                            {carDetails?.car}
+                        <Text
+                            fontFamily="Horizon"
+                            fontSize={32}
+                            lineHeight="$2xl"
+                            color="black"
+                        >
+                            {carDetails.teamNameSecondary}
                         </Text>
                     </VStack>
 
@@ -66,84 +74,76 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                         <VStack alignItems="center">
                             <Text
                                 fontFamily="Horizon"
-                                fontSize="$xs"
-                                color="white"
+                                fontSize="$md"
+                                color="black"
                             >
-                                {carDetails?.engineType}
-                                <Text as={Span}>°</Text>
+                                {carDetails.electricPower} KW
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={8}
+                                fontSize="$2xs"
                                 mt="-$2"
-                                color={neonGreen}
+                                color={darkBlue}
                             >
-                                Configuration
+                                Power
                             </Text>
                         </VStack>
+
                         <VStack alignItems="center">
                             <Text
                                 fontFamily="Horizon"
-                                fontSize="$xs"
-                                color="white"
+                                fontSize="$md"
+                                color="black"
                             >
-                                {carDetails.engineHorsepower} HP
+                                {carDetails.regenerationPower} KW
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={8}
+                                fontSize="$2xs"
                                 mt="-$2"
-                                color={neonGreen}
+                                color={darkBlue}
                             >
-                                Power
+                                Regeneration
                             </Text>
                         </VStack>
                     </HStack>
                     <VStack
                         alignItems="center"
                         space="xl"
-                        paddingTop="$2"
-                        w="$full"
+                        paddingTop="$6"
+                        height="$72"
                     >
-                        <Engine
-                            text={carDetails.engine}
-                            displacement={`${carDetails.engineDisplacement}`}
+                        <Battery
+                            text={carDetails.batterySupplier}
+                            energy={carDetails.batteryEnergy}
                         />
-                        <Electric text={carDetails.electricMotor} />
-                        <Transmission text={carDetails.transmission} />
+                        <PowerTrain text={carDetails.powertrain} />
                         <Drivers
                             drivers={carDetails.drivers}
-                            textColor="white"
-                            headingColor={neonGreen}
+                            textColor="black"
+                            headingColor={darkBlue}
                         />
                     </VStack>
+                    <GEN3Logo />
                 </VStack>
             </SpecificationsContainer>
         </Box>
     );
 };
 
-const F1Page = () => {
-    // const { id } = useGlobalSearchParams();
+const FormulaE = () => {
+    const [formulaeDb] = useState(new Formulae());
 
-    const [f1Db] = useState(new F1());
-    const [carDetailsList, setCarDetailsList] = useState<F1Car[]>([]);
+    const [carDetailsList, setCarDetailsList] = useState<FormulaeCar[]>([]);
 
     useEffect(() => {
         const fetchCarDetails = async () => {
-            const cars = [
-                'redbull-rb19',
-                'mercedes-w14',
-                'williams-fw45',
-                'ferrari-sf23',
-                'alpine-a523',
-                'mclaren-mcl60'
-            ];
+            const cars = ['envision-racing', 'mahindra-racing'];
 
             const detailsList = await Promise.all(
                 cars.map(async (carId) => {
-                    const data = await f1Db.getDetails(carId);
-                    return objectToCamel(data ?? {}) as F1Car;
+                    const data = await formulaeDb.getDetails(carId);
+                    return objectToCamel(data ?? {}) as FormulaeCar;
                 })
             );
 
@@ -152,12 +152,10 @@ const F1Page = () => {
 
         fetchCarDetails();
     }, []);
-
-    // console.log(carDetailsList);
     return carDetailsList.length > 0 ? (
-        <Swiper loop={false}>
+        <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (
-                <F1Details key={index} carDetails={carDetails} />
+                <FormulaeDetails key={index} carDetails={carDetails} />
             ))}
         </Swiper>
     ) : (
@@ -165,4 +163,4 @@ const F1Page = () => {
     );
 };
 
-export default F1Page;
+export default FormulaE;
