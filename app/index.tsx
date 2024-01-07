@@ -1,6 +1,6 @@
 import { Box, VStack, Button, ButtonText, View } from '@gluestack-ui/themed';
-
 import { useRouter } from 'expo-router';
+
 import Logo from './logo.svg';
 import { Header } from '../components/home/Header';
 import { darkBackground, neonGreen } from '../components/theme/colors';

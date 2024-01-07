@@ -1,5 +1,6 @@
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Slot, SplashScreen } from 'expo-router';
+
 import { config } from '../../gluestack.config';
 
 SplashScreen.preventAutoHideAsync();
