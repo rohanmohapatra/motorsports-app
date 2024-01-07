@@ -10,7 +10,7 @@ export const Header = () => {
             </Text>
             <Text
                 fontFamily="Horizon"
-                fontSize="$6xl"
+                fontSize="$5xl"
                 lineHeight="$5xl"
                 color={neonGreen}
             >
@@ -18,7 +18,7 @@ export const Header = () => {
             </Text>
             <Text
                 fontFamily="Horizon"
-                fontSize="$6xl"
+                fontSize="$5xl"
                 lineHeight="$5xl"
                 marginTop="-$2"
                 color={neonGreen}
