@@ -35,7 +35,7 @@ const Gt3 = () => {
                 alt={`${carDetails.brand} ${carDetails.model}`}
             />
 
-            <SpecificationsContainer>
+            <SpecificationsContainer theme="dark">
                 <VStack
                     alignItems="center"
                     h="$full"

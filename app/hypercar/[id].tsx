@@ -42,7 +42,7 @@ const HypercarComponent = () => {
                 alt={`${carDetails.teamName} ${carDetails.car}`}
             />
 
-            <SpecificationsContainer>
+            <SpecificationsContainer theme="dark">
                 <VStack
                     alignItems="center"
                     h="$full"

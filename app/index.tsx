@@ -28,7 +28,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
-                                navigation.push('/gt3/mercedes-w13');
+                                navigation.push('/f1/mercedes-w13');
                             }}
                         >
                             <ButtonText
@@ -68,6 +68,21 @@ const Home = () => {
                                 color={darkBackground}
                             >
                                 Explore GT3 Cars
+                            </ButtonText>
+                        </Button>
+
+                        <Button
+                            rounded="$full"
+                            bgColor={neonGreen}
+                            onPress={() => {
+                                navigation.push('/formulae/envision-racing');
+                            }}
+                        >
+                            <ButtonText
+                                fontFamily="Horizon"
+                                color={darkBackground}
+                            >
+                                Explore FE Cars
                             </ButtonText>
                         </Button>
                     </VStack>

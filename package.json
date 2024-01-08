@@ -40,7 +40,8 @@
         "react-native-svg": "13.9.0",
         "react-native-swiper": "^1.6.0",
         "react-native-web": "~0.19.6",
-        "ts-case-convert": "^2.0.6"
+        "ts-case-convert": "^2.0.6",
+        "yarn": "^1.22.21"
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",

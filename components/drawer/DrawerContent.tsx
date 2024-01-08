@@ -16,7 +16,8 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
         home: false,
         f1: false,
         hyper: false,
-        gt3: false
+        gt3: false,
+        fe: false
     };
     const [config, setConfig] = useState({
         ...initialDrawerConfig,
@@ -58,7 +59,9 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 <DrawerItem
                     label="Explore F1 Cars"
                     onPress={() => {
-                        navigation.navigate('gt3/[id]', { id: 'mercedes-w13' });
+                        navigation.navigate('f1/[id]', {
+                            id: 'envision-racing'
+                        });
                         setConfig({ ...initialDrawerConfig, f1: true });
                     }}
                     focused={config.f1}
@@ -79,6 +82,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                     labelStyle={{
                         fontFamily: 'Horizon',
                         color: darkBackground
+                        // fontSize: 12
                     }}
                 />
                 <DrawerItem
@@ -88,6 +92,20 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                         setConfig({ ...initialDrawerConfig, gt3: true });
                     }}
                     focused={config.gt3}
+                    labelStyle={{
+                        fontFamily: 'Horizon',
+                        color: darkBackground
+                    }}
+                />
+                <DrawerItem
+                    label="Explore FE Cars"
+                    onPress={() => {
+                        navigation.navigate('formulae/[id]', {
+                            id: 'envision-racing'
+                        });
+                        setConfig({ ...initialDrawerConfig, fe: true });
+                    }}
+                    focused={config.fe}
                     labelStyle={{
                         fontFamily: 'Horizon',
                         color: darkBackground
