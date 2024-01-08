@@ -1,6 +1,6 @@
 import { DocumentData } from 'firebase/firestore';
 
-export interface FormulaeCar extends DocumentData {
+export interface FormulaECar extends DocumentData {
     batteryEnergy: string;
     batterySupplier: string;
     drivers: string[];

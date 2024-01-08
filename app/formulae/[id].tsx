@@ -13,13 +13,13 @@ import {
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
 import { flashBlue } from '../../components/theme/colors';
-import { Formulae } from '../../firebase/formulae';
-import { FormulaeCar } from '../../models/FormulaeCar';
+import { FormulaE } from '../../firebase/formulae';
+import { FormulaECar } from '../../models/FormulaECar';
 
-const FormulaeDetails = ({
+const FormulaEDetails = ({
     carDetails
 }: {
-    carDetails: FormulaeCar | undefined;
+    carDetails: FormulaECar | undefined;
 }) => {
     if (!carDetails) {
         return null;
@@ -131,10 +131,10 @@ const FormulaeDetails = ({
     );
 };
 
-const FormulaE = () => {
-    const [formulaeDb] = useState(new Formulae());
+const FormulaEPage = () => {
+    const [formulaeDb] = useState(new FormulaE());
 
-    const [carDetailsList, setCarDetailsList] = useState<FormulaeCar[]>([]);
+    const [carDetailsList, setCarDetailsList] = useState<FormulaECar[]>([]);
 
     useEffect(() => {
         const fetchCarDetails = async () => {
@@ -143,7 +143,7 @@ const FormulaE = () => {
             const detailsList = await Promise.all(
                 cars.map(async (carId) => {
                     const data = await formulaeDb.getDetails(carId);
-                    return objectToCamel(data ?? {}) as FormulaeCar;
+                    return objectToCamel(data ?? {}) as FormulaECar;
                 })
             );
 
@@ -155,7 +155,7 @@ const FormulaE = () => {
     return carDetailsList.length > 0 ? (
         <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (
-                <FormulaeDetails key={index} carDetails={carDetails} />
+                <FormulaEDetails key={index} carDetails={carDetails} />
             ))}
         </Swiper>
     ) : (
@@ -163,4 +163,4 @@ const FormulaE = () => {
     );
 };
 
-export default FormulaE;
+export default FormulaEPage;
