@@ -33,7 +33,7 @@ export default function Layout() {
                             />
                         </Pressable>
                     ),
-                    drawerStyle: { backgroundColor: neonGreen }
+                    drawerStyle: { backgroundColor: neonGreen, width: 350 }
                 })}
                 drawerContent={DrawerContent}
             />
