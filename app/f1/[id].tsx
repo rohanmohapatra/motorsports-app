@@ -32,17 +32,10 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                 alt={`${carDetails.brand} ${carDetails.model}`}
             />
             <SpecificationsContainer theme="dark">
-                <VStack
-                    alignItems="center"
-                    h="$full"
-                    w="$full"
-                    space="4xl"
-                    paddingVertical="$5"
-                >
+                <VStack alignItems="center" h="$full" w="$full" space="4xl">
                     <VStack alignItems="center">
-                        <Logo height="100" width="100" />
+                        <Logo width="100" />
                         <Text
-                            // maxWidth={'$96'}
                             fontFamily="Horizon"
                             color={neonGreen}
                             fontSize="$2xl"
@@ -126,25 +119,15 @@ const F1Page = () => {
 
     useEffect(() => {
         const fetchCarDetails = async () => {
-            const cars = [
-                'redbull-rb19',
-                'mercedes-w14',
-                'williams-fw45',
-                'ferrari-sf23',
-                'alpine-a523',
-                'mclaren-mcl60'
-            ];
-
+            const cars = await f1Db.getF1DocumentNames();
             const detailsList = await Promise.all(
                 cars.map(async (carId) => {
                     const data = await f1Db.getDetails(carId);
                     return objectToCamel(data ?? {}) as F1Car;
                 })
             );
-
             setCarDetailsList(detailsList);
         };
-
         fetchCarDetails();
     }, []);
 

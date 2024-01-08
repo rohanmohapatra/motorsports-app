@@ -138,20 +138,18 @@ const FormulaE = () => {
 
     useEffect(() => {
         const fetchCarDetails = async () => {
-            const cars = ['envision-racing', 'mahindra-racing'];
-
+            const cars = await formulaeDb.getFormulaeDocumentNames();
             const detailsList = await Promise.all(
                 cars.map(async (carId) => {
                     const data = await formulaeDb.getDetails(carId);
                     return objectToCamel(data ?? {}) as FormulaeCar;
                 })
             );
-
             setCarDetailsList(detailsList);
         };
-
         fetchCarDetails();
     }, []);
+
     return carDetailsList.length > 0 ? (
         <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (

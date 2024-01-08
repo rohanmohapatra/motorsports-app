@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
@@ -22,5 +22,12 @@ export class Base {
     }
     getDetails(id: string) {
         throw new Error(`Not implemented for ${id}`);
+    }
+
+    async getDocumentNames(collectionName: string): Promise<string[]> {
+        const db = this.getDatabase();
+        const documentsCollection = collection(db, collectionName);
+        const querySnapshot = await getDocs(documentsCollection);
+        return querySnapshot.docs.map((doc) => doc.id);
     }
 }

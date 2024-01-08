@@ -7,4 +7,8 @@ export class F1 extends Base {
         const docReference = doc(this.getDatabase(), 'f1', id);
         return (await getDoc(docReference)).data();
     }
+
+    async getF1DocumentNames(): Promise<string[]> {
+        return this.getDocumentNames('f1');
+    }
 }

@@ -54,6 +54,18 @@ const gt3 = [
     { field: 'transmission', question: 'Transmission?' }
 ];
 
+const formulae = [
+    { field: 'battery_energy', question: 'Battery Energy?' },
+    { field: 'battery_supplier', question: 'Battery Supplier?' },
+    { field: 'drivers', question: 'Drivers? (Comma-separated)' },
+    { field: 'electric_power', question: 'Electric Power?' },
+    { field: 'image', question: 'Image URL?' },
+    { field: 'powertrain', question: 'Powertrain?' },
+    { field: 'regeneration_power', question: 'Regeneration Power?' },
+    { field: 'team_name_primary', question: 'Primary Team Name?' },
+    { field: 'team_name_secondary', question: 'Secondary Team Name?' }
+];
+
 const pushToFirebase = async (
     collectionId: string,
     document: FireStoreDocument,
@@ -83,7 +95,8 @@ const type = await select({
     options: [
         { value: 'f1', label: 'F1 Cars' },
         { value: 'hypercar', label: 'Hypercars' },
-        { value: 'gt3', label: 'GT3 Cars' }
+        { value: 'gt3', label: 'GT3 Cars' },
+        { value: 'formulae', label: 'Formula E Cars' }
     ]
 });
 
@@ -170,6 +183,35 @@ if (type === 'gt3') {
         document,
         `${document['brand'].replaceAll(' ', '-')}-${document[
             'model'
+        ].replaceAll(' ', '-')}`
+    ).then(() => {
+        spin.stop(`Firestore push completed!`);
+        outro('Thank you!');
+        process.exit(0);
+    });
+}
+
+if (type === 'formulae') {
+    for (let i = 0; i < formulae.length; i++) {
+        const askedField = await text({
+            message: formulae[i].question
+        });
+
+        document[formulae[i].field] = askedField.toString();
+        if (isCancel(askedField)) {
+            cancel('Operation cancelled.');
+            process.exit(0);
+        }
+    }
+
+    const spin = spinner();
+    spin.start('Starting the firestore push...');
+
+    pushToFirebase(
+        'formulae',
+        document,
+        `${document['teamNamePrimary'].replaceAll(' ', '-')}-${document[
+            'teamNameSecondary'
         ].replaceAll(' ', '-')}`
     ).then(() => {
         spin.stop(`Firestore push completed!`);

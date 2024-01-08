@@ -7,4 +7,8 @@ export class Formulae extends Base {
         const docReference = doc(this.getDatabase(), 'formulae', id);
         return (await getDoc(docReference)).data();
     }
+
+    async getFormulaeDocumentNames(): Promise<string[]> {
+        return this.getDocumentNames('formulae');
+    }
 }

@@ -82,7 +82,6 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                     labelStyle={{
                         fontFamily: 'Horizon',
                         color: darkBackground
-                        // fontSize: 12
                     }}
                 />
                 <DrawerItem
