@@ -1,23 +1,27 @@
-import { Span } from '@expo/html-elements';
-import { Box, Text, Image, VStack, HStack } from '@gluestack-ui/themed';
-import React, { useEffect, useState } from 'react';
+import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed';
+import { useEffect, useState } from 'react';
 import Swiper from 'react-native-swiper';
 import { objectToCamel } from 'ts-case-convert';
 
-import Logo from '../../assets/f1/F1.svg';
+import LMDHLogo from '../../assets/motorsport-logos/LMDH.svg';
+import LMHLogo from '../../assets/motorsport-logos/LMH.svg';
 import { Loader } from '../../components/shared/loader';
 import {
-    Drivers,
+    Chassis,
     Electric,
     Engine,
     Transmission
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { neonGreen } from '../../components/theme/colors';
-import { F1 } from '../../firebase/f1';
-import { F1Car } from '../../models/F1Car';
+import { neonGreenLight } from '../../components/theme/colors';
+import { Hypercar } from '../../firebase/hypercar';
+import { HyperCar } from '../../models/HyperCar';
 
-const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
+export const HyperCarComponent = ({
+    carDetails
+}: {
+    carDetails: HyperCar | undefined;
+}) => {
     if (!carDetails) {
         return null;
     }
@@ -26,11 +30,14 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
         <Box h="$full">
             <Image
                 size="full"
-                source={require('../../assets/f1/formula1-mercedes.jpeg')}
+                source={{
+                    uri: carDetails.image
+                }}
                 height={350}
                 resizeMode="cover"
-                alt={`${carDetails.brand} ${carDetails.model}`}
+                alt={`${carDetails.teamName} ${carDetails.car}`}
             />
+
             <SpecificationsContainer theme="dark">
                 <VStack
                     alignItems="center"
@@ -39,60 +46,68 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                     space="4xl"
                     paddingVertical="$5"
                 >
+                    {carDetails.category === 'lmh' ? (
+                        <LMHLogo style={{ marginLeft: 14 }} height={42} />
+                    ) : (
+                        <LMDHLogo style={{ marginLeft: 14 }} height={42} />
+                    )}
                     <VStack alignItems="center">
-                        <Logo height="100" width="100" />
                         <Text
-                            // maxWidth={'$96'}
                             fontFamily="Horizon"
-                            color={neonGreen}
-                            fontSize="$2xl"
+                            color={neonGreenLight}
+                            fontSize={36}
+                            lineHeight="$3xl"
                         >
-                            {carDetails?.teamName}
+                            {carDetails.teamName}
                         </Text>
-                        <Text fontFamily="Horizon" fontSize="$2xl">
-                            {carDetails?.car}
+                        <Text
+                            fontFamily="Horizon"
+                            fontSize={32}
+                            lineHeight="$2xl"
+                            color="white"
+                        >
+                            {carDetails.car}
                         </Text>
                     </VStack>
-
                     <HStack
                         alignContent="space-between"
                         width="$full"
                         space="4xl"
                         justifyContent="center"
+                        paddingTop="$4"
                     >
                         <VStack alignItems="center">
                             <Text
                                 fontFamily="Horizon"
-                                fontSize="$xs"
-                                color="white"
-                            >
-                                {carDetails?.engineType}
-                                <Text as={Span}>°</Text>
-                            </Text>
-                            <Text
-                                fontFamily="Horizon"
-                                fontSize={8}
-                                mt="-$2"
-                                color={neonGreen}
-                            >
-                                Configuration
-                            </Text>
-                        </VStack>
-                        <VStack alignItems="center">
-                            <Text
-                                fontFamily="Horizon"
-                                fontSize="$xs"
+                                fontSize="$lg"
                                 color="white"
                             >
                                 {carDetails.engineHorsepower} HP
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={8}
+                                fontSize={10}
                                 mt="-$2"
-                                color={neonGreen}
+                                color={neonGreenLight}
                             >
-                                Power
+                                ICE Power
+                            </Text>
+                        </VStack>
+                        <VStack alignItems="center" ml="$8">
+                            <Text
+                                fontFamily="Horizon"
+                                fontSize="$lg"
+                                color="white"
+                            >
+                                {carDetails.electricHorsepower} HP
+                            </Text>
+                            <Text
+                                fontFamily="Horizon"
+                                fontSize={10}
+                                mt="-$2"
+                                color={neonGreenLight}
+                            >
+                                Electric Power
                             </Text>
                         </VStack>
                     </HStack>
@@ -104,15 +119,11 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
                     >
                         <Engine
                             text={carDetails.engine}
-                            displacement={`${carDetails.engineDisplacement}`}
+                            displacement={`${carDetails.engineDisplacement} ${carDetails.engineType}`}
                         />
                         <Electric text={carDetails.electricMotor} />
                         <Transmission text={carDetails.transmission} />
-                        <Drivers
-                            drivers={carDetails.drivers}
-                            textColor="white"
-                            headingColor={neonGreen}
-                        />
+                        <Chassis text={carDetails.chassis} />
                     </VStack>
                 </VStack>
             </SpecificationsContainer>
@@ -120,38 +131,21 @@ const F1Details = ({ carDetails }: { carDetails: F1Car | undefined }) => {
     );
 };
 
-const F1Page = () => {
-    const [f1Db] = useState(new F1());
-    const [carDetailsList, setCarDetailsList] = useState<F1Car[]>([]);
-
+const HyperCarPage = () => {
+    const [hypercarDb] = useState(new Hypercar());
+    const [carDetailsList, setCarDetailsList] = useState<HyperCar[]>([]);
     useEffect(() => {
-        const fetchCarDetails = async () => {
-            const cars = [
-                'redbull-rb19',
-                'mercedes-w14',
-                'williams-fw45',
-                'ferrari-sf23',
-                'alpine-a523',
-                'mclaren-mcl60'
-            ];
-
-            const detailsList = await Promise.all(
-                cars.map(async (carId) => {
-                    const data = await f1Db.getDetails(carId);
-                    return objectToCamel(data ?? {}) as F1Car;
-                })
+        hypercarDb.getAllDetails().then((data: any) => {
+            setCarDetailsList(
+                data.map((d: any) => objectToCamel(d ?? {}) as HyperCar)
             );
-
-            setCarDetailsList(detailsList);
-        };
-
-        fetchCarDetails();
+        });
     }, []);
 
     return carDetailsList.length > 0 ? (
         <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (
-                <F1Details key={index} carDetails={carDetails} />
+                <HyperCarComponent key={index} carDetails={carDetails} />
             ))}
         </Swiper>
     ) : (
@@ -159,4 +153,4 @@ const F1Page = () => {
     );
 };
 
-export default F1Page;
+export default HyperCarPage;
