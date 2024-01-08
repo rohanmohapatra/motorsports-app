@@ -73,9 +73,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 <DrawerItem
                     label="Explore Hypercars"
                     onPress={() => {
-                        navigation.navigate('hypercar/[id]', {
-                            id: 'acura-arx-06'
-                        });
+                        navigation.navigate('hypercar/index');
                         setConfig({ ...initialDrawerConfig, hyper: true });
                     }}
                     focused={config.hyper}
@@ -88,7 +86,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 <DrawerItem
                     label="Explore GT3 Cars"
                     onPress={() => {
-                        navigation.navigate('gt3/[id]', { id: 'mclaren-720s' });
+                        navigation.navigate('gt3/index');
                         setConfig({ ...initialDrawerConfig, gt3: true });
                     }}
                     focused={config.gt3}
