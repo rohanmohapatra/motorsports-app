@@ -23,4 +23,8 @@ export class Base {
     getDetails(id: string) {
         throw new Error(`Not implemented for ${id}`);
     }
+
+    getAllDetails() {
+        throw new Error(`Not implemented`);
+    }
 }

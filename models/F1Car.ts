@@ -10,4 +10,5 @@ export interface F1Car extends DocumentData {
     engineHorsepower: string;
     electricMotor: string;
     transmission: string;
+    drivers: string[];
 }

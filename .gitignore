@@ -2,3 +2,5 @@ node_modules
 .expo
 .yarn/cache
 .env.local
+.DS_Store
+scripts/service-accounts/service-account.json
