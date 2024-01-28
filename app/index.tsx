@@ -72,7 +72,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
-                                navigation.push('/formulae/envision-racing');
+                                navigation.push('/formulae');
                             }}
                         >
                             <ButtonText
