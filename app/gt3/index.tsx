@@ -201,6 +201,7 @@ export const Gt3CarComponent = ({
                                 fontFamily="Horizon"
                                 color={darkBackground}
                                 fontSize={18}
+                                textAlign="center"
                             >
                                 {carDetails.brand} {carDetails.modelRoadcar}
                             </Text>
@@ -216,7 +217,7 @@ export const Gt3CarComponent = ({
                                     borderTopLeftRadius: 20,
                                     borderTopRightRadius: 20
                                 }}
-                                resizeMode="contain"
+                                resizeMode="cover"
                                 alt={`${carDetails.brand} ${carDetails.modelRoadcar}`}
                             >
                                 <LinearGradient
