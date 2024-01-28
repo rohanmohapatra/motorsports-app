@@ -4,6 +4,7 @@ import { addToFirestore } from './add-to-firestore.mjs';
 import { SeriesType } from './helpers.mjs';
 import { appendToFirestore } from './append-to-firestore.mjs';
 import { updateKey } from './update-key.mjs';
+import { updateData } from './update-data-in-firestore.mjs';
 
 // The CLI starts from here.
 
@@ -43,6 +44,10 @@ const main = async () => {
 
         case 'update-key':
             await updateKey(type);
+            break;
+
+        case 'update':
+            await updateData(type);
             break;
 
         default:

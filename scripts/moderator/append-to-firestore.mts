@@ -1,10 +1,17 @@
 import { cancel, isCancel, select, spinner, text } from '@clack/prompts';
-import { SeriesType, gt3 } from './helpers.mjs';
+import { SeriesType, f1, formula_e, gt3, hypercar } from './helpers.mjs';
 import {
     getAvailableKeys,
     getDataFromKey,
     updateInFirebase
 } from './firestore-utils.mjs';
+
+const typeSelection: { [key: string]: any } = {
+    f1: f1,
+    gt3: gt3,
+    hypercar: hypercar,
+    formulae: formula_e
+};
 
 export const appendToFirestore = async (type: SeriesType) => {
     const documentIds = await getAvailableKeys(String(type));
@@ -19,8 +26,8 @@ export const appendToFirestore = async (type: SeriesType) => {
         process.exit(0);
     }
     const documentFields = Object.keys(document ?? {});
-    const fieldsToUpdate = gt3.filter(
-        (field) => !documentFields.includes(field.field)
+    const fieldsToUpdate = typeSelection[String(type)].filter(
+        (field: { field: string }) => !documentFields.includes(field.field)
     );
 
     for (let i = 0; i < fieldsToUpdate.length; i++) {
