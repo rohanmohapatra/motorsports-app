@@ -34,9 +34,6 @@ const Home = () => {
                             <ButtonText
                                 fontFamily="Horizon"
                                 color={darkBackground}
-                                onPress={() => {
-                                    navigation.push('/f1/mercedes-w13');
-                                }}
                             >
                                 Explore F1 Cars
                             </ButtonText>
@@ -45,7 +42,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
-                                navigation.push('/hypercar/ferrari-499p');
+                                navigation.push('/hypercar');
                             }}
                         >
                             <ButtonText
@@ -60,7 +57,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
-                                navigation.push('/gt3/mclaren-720s');
+                                navigation.push('/gt3');
                             }}
                         >
                             <ButtonText

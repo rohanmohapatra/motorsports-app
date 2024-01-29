@@ -7,7 +7,7 @@ export const config = createConfig({
         ...defaultConfig.tokens,
         fonts: {
             ...defaultConfig.tokens.fonts,
-            body: 'sans-serif',
+            body: 'OpenSans',
             heading: 'Horizon',
             headingOutline: 'Horizon-Outlined'
         },

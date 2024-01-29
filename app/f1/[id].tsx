@@ -132,7 +132,7 @@ const F1Page = () => {
     }, []);
 
     return carDetailsList.length > 0 ? (
-        <Swiper loop={false}>
+        <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (
                 <F1Details key={index} carDetails={carDetails} />
             ))}

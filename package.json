@@ -1,6 +1,6 @@
 {
     "name": "the-motorsports-app",
-    "version": "1.6.1",
+    "version": "1.8.1",
     "main": "index.tsx",
     "scripts": {
         "start": "expo start",
@@ -9,7 +9,7 @@
         "web": "expo start --web",
         "prepare": "husky install",
         "lint": "echo \"🎉Running eslint check\" && eslint --ext .js,.jsx,.ts,.tsx .",
-        "moderator": "ts-node --esm scripts/add-to-firestore.mts"
+        "moderator": "ts-node --esm scripts/moderator/main.mts"
     },
     "dependencies": {
         "@expo/html-elements": "latest",

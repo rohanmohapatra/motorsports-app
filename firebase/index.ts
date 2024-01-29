@@ -30,4 +30,7 @@ export class Base {
         const querySnapshot = await getDocs(documentsCollection);
         return querySnapshot.docs.map((doc) => doc.id);
     }
+    getAllDetails() {
+        throw new Error(`Not implemented`);
+    }
 }
