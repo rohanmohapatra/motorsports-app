@@ -59,9 +59,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 <DrawerItem
                     label="Explore F1 Cars"
                     onPress={() => {
-                        navigation.navigate('f1/[id]', {
-                            id: 'envision-racing'
-                        });
+                        navigation.navigate('f1/index');
                         setConfig({ ...initialDrawerConfig, f1: true });
                     }}
                     focused={config.f1}
@@ -98,9 +96,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
                 <DrawerItem
                     label="Explore FE Cars"
                     onPress={() => {
-                        navigation.navigate('formulae/[id]', {
-                            id: 'envision-racing'
-                        });
+                        navigation.navigate('formulae/index');
                         setConfig({ ...initialDrawerConfig, fe: true });
                     }}
                     focused={config.fe}

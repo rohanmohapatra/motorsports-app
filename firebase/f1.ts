@@ -1,4 +1,4 @@
-import { doc, getDoc } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 
 import { Base } from '.';
 
@@ -7,8 +7,14 @@ export class F1 extends Base {
         const docReference = doc(this.getDatabase(), 'f1', id);
         return (await getDoc(docReference)).data();
     }
-
-    async getF1DocumentNames(): Promise<string[]> {
+    async getFormulaeDocumentNames(): Promise<string[]> {
         return this.getDocumentNames('f1');
+    }
+    async getAllDetails() {
+        const documents = await getDocs(collection(this.getDatabase(), 'f1'));
+        return documents.docs.map((document) => ({
+            id: document.id,
+            ...document.data()
+        }));
     }
 }
