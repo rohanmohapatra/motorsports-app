@@ -1,5 +1,6 @@
 import { Box, HStack, Image, Text, VStack } from '@gluestack-ui/themed';
 import { useEffect, useState } from 'react';
+import { Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { objectToCamel } from 'ts-case-convert';
 
@@ -14,13 +15,14 @@ import {
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
 import { flashBlue } from '../../components/theme/colors';
 import { FormulaE } from '../../firebase/formulae';
-import { FormulaECar } from '../../models/FormulaECar';
+import { FormulaECar } from '../../models/FormulaeCar';
 
 export const FormulaEDetails = ({
     carDetails
 }: {
     carDetails: FormulaECar | undefined;
 }) => {
+    const windowWidth = Dimensions.get('window').width;
     if (!carDetails) {
         return null;
     }
@@ -36,7 +38,6 @@ export const FormulaEDetails = ({
                 resizeMode="cover"
                 alt={`${carDetails.teamNamePrimary} ${carDetails.teamNamePrimary}`}
             />
-
             <SpecificationsContainer theme="light">
                 <VStack
                     alignItems="center"
@@ -51,14 +52,14 @@ export const FormulaEDetails = ({
                         <Text
                             fontFamily="Horizon"
                             color={flashBlue}
-                            fontSize={40}
+                            fontSize={32}
                             lineHeight="$3xl"
                         >
                             {carDetails.teamNamePrimary}
                         </Text>
                         <Text
                             fontFamily="Horizon"
-                            fontSize={32}
+                            fontSize={20}
                             lineHeight="$2xl"
                             color="black"
                         >
@@ -125,9 +126,17 @@ export const FormulaEDetails = ({
                             headingColor={flashBlue}
                         />
                     </VStack>
-                    <GEN3Logo />
                 </VStack>
             </SpecificationsContainer>
+            <GEN3Logo
+                style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    transform: [{ translateX: windowWidth / 4 }]
+                }}
+            />
         </Box>
     );
 };
