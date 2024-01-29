@@ -15,7 +15,7 @@ import {
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
 import { flashBlue } from '../../components/theme/colors';
 import { FormulaE } from '../../firebase/formulae';
-import { FormulaECar } from '../../models/FormulaeCar';
+import { FormulaECar } from '../../models/FormulaECar';
 
 export const FormulaEDetails = ({
     carDetails
