@@ -8,10 +8,6 @@ export class FormulaE extends Base {
         return (await getDoc(docReference)).data();
     }
 
-    // async getFormulaeDocumentNames(): Promise<string[]> {
-    //     return this.getDocumentNames('formulae');
-    // }
-
     async getAllDetails() {
         const documents = await getDocs(
             collection(this.getDatabase(), 'formulae')

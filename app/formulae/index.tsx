@@ -16,7 +16,7 @@ import { flashBlue } from '../../components/theme/colors';
 import { FormulaE } from '../../firebase/formulae';
 import { FormulaECar } from '../../models/FormulaECar';
 
-export const FormulaECarComponent = ({
+export const FormulaEDetails = ({
     carDetails
 }: {
     carDetails: FormulaECar | undefined;
@@ -29,8 +29,9 @@ export const FormulaECarComponent = ({
         <Box h="$full">
             <Image
                 size="full"
-                source={require('../../assets/f1/formula1-mercedes.jpeg')}
-                // source={carDetails.image}
+                source={{
+                    uri: carDetails.image
+                }}
                 height={350}
                 resizeMode="cover"
                 alt={`${carDetails.teamNamePrimary} ${carDetails.teamNamePrimary}`}
@@ -132,22 +133,21 @@ export const FormulaECarComponent = ({
 };
 
 const FormulaEPage = () => {
-    const [formulaeDb] = useState(new FormulaE());
+    const [formulaEDb] = useState(new FormulaE());
 
     const [carDetailsList, setCarDetailsList] = useState<FormulaECar[]>([]);
 
     useEffect(() => {
-        formulaeDb.getAllDetails().then((data: any) => {
+        formulaEDb.getAllDetails().then((data: any) => {
             setCarDetailsList(
                 data.map((d: any) => objectToCamel(d ?? {}) as FormulaECar)
             );
         });
     }, []);
-
     return carDetailsList.length > 0 ? (
         <Swiper loop={false} showsPagination={false}>
             {carDetailsList.map((carDetails, index) => (
-                <FormulaECarComponent key={index} carDetails={carDetails} />
+                <FormulaEDetails key={index} carDetails={carDetails} />
             ))}
         </Swiper>
     ) : (

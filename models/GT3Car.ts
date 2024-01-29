@@ -11,4 +11,12 @@ export interface GT3Car extends DocumentData {
     engineTorque: string;
     engineType: string;
     transmission: string;
+
+    //RoadCar Stuff
+    modelRoadcar: string;
+    imageRoadcar: string;
+    engineHorsepowerRoadcar: string;
+    engineTorqueRoadcar: string;
+    engineRoadcar: string;
+    transmissionRoadcar: string;
 }

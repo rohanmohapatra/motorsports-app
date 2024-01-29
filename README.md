@@ -1,10 +1,20 @@
-## Install dependencies
+# The Motorsports App 🏁✨
+
+<img src="https://badgen.net/badge/icon/React%20Native/purple?label"> <img src="https://badgen.net/github/checks/rohanmohapatra/motorsports-app">
+
+![Alt text](assets/docs/hero.png)
+
+The Motorsports App is a comprehensive mobile application that serves as the ultimate destination for enthusiasts and fans of high-performance racing. This application caters to the discerning tastes of motorsports aficionados by offering detailed specifications of cars used in prestigious racing categories such as Formula 1, Formula E, GT3 Racing, LMH (Le Mans Hypercar), and LMDh (Le Mans Daytona hybrid).
+
+## Development
+
+### Install dependencies
 
 ```bash
 yarn
 ```
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -19,16 +29,12 @@ yarn android
 yarn start
 ```
 
-## Learn More
+## Tech Stack
 
-To learn more about Expo + Gluestack UI template, take a look at the following resources:
+### <img src="https://gluestack.io/_next/image?url=%2Ficon%2Ffavicons%2Fui.svg&w=32&q=75" alt="Gluestack" width="18" height="18"> Made with gluestack-io
 
--   [Expo Documentation](https://github.com/expo/expo) - learn about Expo features and API.
--   [Gluestack UI Documenatation](https://ui.gluestack.io/docs/overview/introduction) - learn about core concepts and architecture of gluestack-ui.
--   [Gluestack Style Documentaion](https://style.gluestack.io/docs/overview/introduction) - learn about the universal styling library that is used in Gluestack-ui
+## Contributors
 
-You can check out:
-
--   [the gluestack-ui GitHub repository](https://github.com/gluestack/gluestack-ui)
--   [the gluestack-style GitHub repository](https://github.com/gluestack/gluestack-style)
-    Your feedback and contributions are welcome!
+<a href="https://github.com/rohanmohapatra/motorsports-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rohanmohapatra/motorsports-app" />
+</a>
