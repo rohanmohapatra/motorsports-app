@@ -1,4 +1,3 @@
-import { Span } from '@expo/html-elements';
 import { Box, Text, Image, VStack, HStack } from '@gluestack-ui/themed';
 import React, { useEffect, useState } from 'react';
 import Swiper from 'react-native-swiper';
@@ -13,7 +12,7 @@ import {
     Transmission
 } from '../../components/shared/specifications';
 import { SpecificationsContainer } from '../../components/shared/specifications-container';
-import { neonGreen } from '../../components/theme/colors';
+import { neonGreenLight } from '../../components/theme/colors';
 import { F1 } from '../../firebase/f1';
 import { F1Car } from '../../models/F1Car';
 
@@ -41,16 +40,24 @@ export const F1CarComponent = ({
                 <VStack alignItems="center" h="$full" w="$full" space="4xl">
                     <VStack alignItems="center">
                         <Logo width="100" />
-                        <Text
-                            fontFamily="Horizon"
-                            color={neonGreen}
-                            fontSize="$2xl"
-                        >
-                            {carDetails?.teamName}
-                        </Text>
-                        <Text fontFamily="Horizon" fontSize="$2xl">
-                            {carDetails?.car}
-                        </Text>
+                        <VStack alignItems="center" gap={-6}>
+                            <Text
+                                fontFamily="Horizon"
+                                color={neonGreenLight}
+                                fontSize={24}
+                                lineHeight="$3xl"
+                            >
+                                {carDetails?.teamName}
+                            </Text>
+                            <Text
+                                fontFamily="Horizon"
+                                fontSize={22}
+                                lineHeight="$2xl"
+                                color="white"
+                            >
+                                {carDetails?.car}
+                            </Text>
+                        </VStack>
                     </VStack>
 
                     <HStack
@@ -66,13 +73,12 @@ export const F1CarComponent = ({
                                 color="white"
                             >
                                 {carDetails?.engineType}
-                                <Text as={Span}>°</Text>
                             </Text>
                             <Text
                                 fontFamily="Horizon"
                                 fontSize={8}
                                 mt="-$2"
-                                color={neonGreen}
+                                color={neonGreenLight}
                             >
                                 Configuration
                             </Text>
@@ -89,7 +95,7 @@ export const F1CarComponent = ({
                                 fontFamily="Horizon"
                                 fontSize={8}
                                 mt="-$2"
-                                color={neonGreen}
+                                color={neonGreenLight}
                             >
                                 Power
                             </Text>
@@ -110,7 +116,7 @@ export const F1CarComponent = ({
                         <Drivers
                             drivers={carDetails.drivers}
                             textColor="white"
-                            headingColor={neonGreen}
+                            headingColor={neonGreenLight}
                         />
                     </VStack>
                 </VStack>

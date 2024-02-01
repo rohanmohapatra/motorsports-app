@@ -26,6 +26,7 @@ export const hypercar = [
 export const gt3 = [
     { field: 'brand', question: 'Brand Name?' },
     { field: 'model', question: 'Model?' },
+    { field: 'image', question: 'Image?' },
     { field: 'electric_motor', question: 'Electric Motor?' },
     { field: 'engine', question: 'Engine Name?' },
     { field: 'engine_displacement', question: 'Engine Displacement?' },

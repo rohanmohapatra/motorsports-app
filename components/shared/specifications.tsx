@@ -194,7 +194,7 @@ export const Drivers = ({ drivers, headingColor, textColor }: DriversProps) => {
                                 fontFamily="Horizon"
                                 w="$40"
                             >
-                                {driver.split(' ')[1]}
+                                {driver.split(' ').slice(1).join(' ')}
                             </Text>
                         )}
                     </VStack>

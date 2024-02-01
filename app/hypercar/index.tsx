@@ -51,18 +51,18 @@ export const HyperCarComponent = ({
                     ) : (
                         <LMDHLogo style={{ marginLeft: 14 }} height={42} />
                     )}
-                    <VStack alignItems="center">
+                    <VStack alignItems="center" gap={-6}>
                         <Text
                             fontFamily="Horizon"
                             color={neonGreenLight}
-                            fontSize={36}
+                            fontSize={28}
                             lineHeight="$3xl"
                         >
                             {carDetails.teamName}
                         </Text>
                         <Text
                             fontFamily="Horizon"
-                            fontSize={32}
+                            fontSize={22}
                             lineHeight="$2xl"
                             color="white"
                         >

@@ -4,25 +4,15 @@ import {
     DrawerContentScrollView,
     DrawerItem
 } from '@react-navigation/drawer';
-import { useState } from 'react';
 
+import { useDrawer } from './drawer-context';
 import { version } from '../../package.json';
 import { darkBackground } from '../theme/colors';
 
 // TODO: Make this DRY, too many same kind components
 export const DrawerContent = (props: DrawerContentComponentProps) => {
     const { navigation } = props;
-    const initialDrawerConfig = {
-        home: false,
-        f1: false,
-        hyper: false,
-        gt3: false,
-        fe: false
-    };
-    const [config, setConfig] = useState({
-        ...initialDrawerConfig,
-        home: true
-    });
+    const { initialDrawerConfig, config, setConfig } = useDrawer();
 
     return (
         <DrawerContentScrollView

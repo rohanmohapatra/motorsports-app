@@ -47,19 +47,20 @@ export const FormulaEDetails = ({
                     paddingVertical="$5"
                     flex={1}
                 >
-                    <FELogo />
-                    <VStack alignItems="center">
+                    <FELogo width="150" />
+                    <VStack alignItems="center" gap={-6}>
                         <Text
                             fontFamily="Horizon"
                             color={flashBlue}
-                            fontSize={32}
-                            lineHeight="$3xl"
+                            fontSize={26}
+                            lineHeight="$2xl"
+                            textAlign="center"
                         >
                             {carDetails.teamNamePrimary}
                         </Text>
                         <Text
                             fontFamily="Horizon"
-                            fontSize={20}
+                            fontSize={22}
                             lineHeight="$2xl"
                             color="black"
                         >
@@ -131,7 +132,7 @@ export const FormulaEDetails = ({
             <GEN3Logo
                 style={{
                     position: 'absolute',
-                    bottom: 0,
+                    bottom: 30,
                     left: 0,
                     right: 0,
                     transform: [{ translateX: windowWidth / 4 }]

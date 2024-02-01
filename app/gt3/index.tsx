@@ -55,7 +55,7 @@ export const Gt3CarComponent = ({
             <Image
                 size="full"
                 source={{
-                    uri: 'https://www.topgear.com/sites/default/files/2023/02/McLaren_720S_GT3_Evo_3.jpg?w=892&h=502'
+                    uri: carDetails.image
                 }}
                 height={350}
                 resizeMode="cover"
@@ -76,18 +76,18 @@ export const Gt3CarComponent = ({
                         paddingBottom="$12"
                     >
                         <GTLogo />
-                        <VStack alignItems="center">
+                        <VStack alignItems="center" gap={-6}>
                             <Text
                                 fontFamily="Horizon"
                                 color={neonGreenLight}
-                                fontSize={32}
+                                fontSize={28}
                                 lineHeight="$3xl"
                             >
                                 {carDetails.brand}
                             </Text>
                             <Text
                                 fontFamily="Horizon"
-                                fontSize={26}
+                                fontSize={22}
                                 lineHeight="$2xl"
                                 color="white"
                             >

@@ -2,11 +2,13 @@ import { Box, VStack, Button, ButtonText, View } from '@gluestack-ui/themed';
 import { useRouter } from 'expo-router';
 
 import Logo from './logo.svg';
+import { useDrawer } from '../components/drawer/drawer-context';
 import { Header } from '../components/home/Header';
 import { darkBackground, neonGreen } from '../components/theme/colors';
 
 const Home = () => {
     const navigation = useRouter();
+    const { initialDrawerConfig, setConfig } = useDrawer();
     return (
         <View>
             <Box h="$full" justifyContent="center" bgColor={darkBackground}>
@@ -28,6 +30,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
+                                setConfig({ ...initialDrawerConfig, f1: true });
                                 navigation.push('/f1');
                             }}
                         >
@@ -42,6 +45,10 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
+                                setConfig({
+                                    ...initialDrawerConfig,
+                                    hyper: true
+                                });
                                 navigation.push('/hypercar');
                             }}
                         >
@@ -57,6 +64,10 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
+                                setConfig({
+                                    ...initialDrawerConfig,
+                                    gt3: true
+                                });
                                 navigation.push('/gt3');
                             }}
                         >
@@ -72,6 +83,7 @@ const Home = () => {
                             rounded="$full"
                             bgColor={neonGreen}
                             onPress={() => {
+                                setConfig({ ...initialDrawerConfig, fe: true });
                                 navigation.push('/formulae');
                             }}
                         >
