@@ -10,12 +10,12 @@ const Index = () => {
             height="100vh"
             color="neonGreen.500"
             spacing={0}
-            backgroundImage="/background.png"
+            backgroundImage="/motorsports-app/background.png"
             backgroundPosition="center"
             backgroundSize="cover"
         >
             <Image
-                src="/triangle.svg"
+                src="/motorsports-app/triangle.svg"
                 height={100}
                 width={100}
                 alt="Logo"
@@ -59,7 +59,7 @@ const Index = () => {
                         </Button>
                     </Stack>
                 </Stack>
-                <Img src="/hero.png" width="25rem" />
+                <Img src="/motorsports-app/hero.png" width="25rem" />
             </HStack>
         </Stack>
     );
