@@ -9993,10 +9993,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-status-bar@npm:~1.6.0":
-  version: 1.6.0
-  resolution: "expo-status-bar@npm:1.6.0"
-  checksum: e9fe7eeac4dfb3a534d79b6fa0df2a3d2e4c69edeb3573e408ca8d3b7d192627b3f9638c8f656bea9af0a6660f27c99c5da504a508294893dbe359ad5f1d6ab3
+"expo-status-bar@npm:~1.11.1":
+  version: 1.11.1
+  resolution: "expo-status-bar@npm:1.11.1"
+  checksum: 5ac4d6b592acff4c8d5da2cbe1eb337b9389b648e4e4c56af4c484b5f1fa0dddf09f5b7c86b34fb03d0a77d4a6658e370cfd57904587794fa14b7e06cae41e88
   languageName: node
   linkType: hard
 
@@ -17192,7 +17192,7 @@ __metadata:
     expo-linking: ~5.0.2
     expo-router: ^2.0.0
     expo-splash-screen: ~0.20.5
-    expo-status-bar: ~1.6.0
+    expo-status-bar: ~1.11.1
     firebase: ^10.7.1
     firebase-admin: ^12.0.0
     husky: ^8.0.3
