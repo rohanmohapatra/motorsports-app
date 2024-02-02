@@ -1,5 +1,6 @@
 import { Button, HStack, Heading, Stack, Image as Img } from '@chakra-ui/react';
 import Image from 'next/image';
+
 import { horizon } from '../font';
 
 const Index = () => {
