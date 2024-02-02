@@ -18,8 +18,10 @@ jobs:
                   node-version: '18'
 
             - name: Plug-in production secrets
-            - run: echo EXPO_PUBLIC_FIREBASE_API_KEY=${{ secrets.EXPO_PUBLIC_FIREBASE_API_KEY }} >> .env
-            - run: echo EXPO_PUBLIC_MESSAGING_SENDER_ID=${{ secrets.EXPO_PUBLIC_MESSAGING_SENDER_ID }} >> .env
+              run: |
+                  echo EXPO_PUBLIC_FIREBASE_API_KEY=${{ secrets.EXPO_PUBLIC_FIREBASE_API_KEY }} >> .env
+                  echo EXPO_PUBLIC_MESSAGING_SENDER_ID=${{ secrets.EXPO_PUBLIC_MESSAGING_SENDER_ID }} >> .env
+                  cat .env
 
             - name: Install dependencies
               run: yarn install
