@@ -1,41 +1,46 @@
-name: Build android
+name: Create Mobile App Builds
 
 on:
-  push:
-    branches: [ "main" ]
+    push:
+        branches: ['main']
 
 jobs:
-  build-android:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    build-android:
+        runs-on: ubuntu-latest
+        if: ${{ !contains(github.event.head_commit.message, 'Bumps version to') }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+            - name: Setup node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
 
-      - name: Install dependencies
-        run: yarn install
+            - name: Plug-in production secrets
+            - run: echo EXPO_PUBLIC_FIREBASE_API_KEY=${{ secrets.EXPO_PUBLIC_FIREBASE_API_KEY }} >> .env
+            - run: echo EXPO_PUBLIC_MESSAGING_SENDER_ID=${{ secrets.EXPO_PUBLIC_MESSAGING_SENDER_ID }} >> .env
 
-      - name: Install java
-        uses: actions/setup-java@v3
-        with:
-          java-version: "11"
-          distribution: 'adopt'
+            - name: Install dependencies
+              run: yarn install
 
-      - name: Expo Prebuild 
-        run: yarn expo prebuild --platform android
+            - name: Install java
+              uses: actions/setup-java@v3
+              with:
+                  java-version: '11'
+                  distribution: 'adopt'
 
-      - name: make gradlew executable
-        run: chmod +x ./android/gradlew
+            - name: Expo Prebuild
+              run: yarn expo prebuild --platform android
 
-      - name: Build android APK
-        run: cd ./android && ./gradlew :app:assembleRelease
+            - name: Make gradlew Executable
+              run: chmod +x ./android/gradlew
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: app-release.apk
-          path: android/app/build/outputs/apk/release/
+            - name: Build Android APK
+              run: cd ./android && ./gradlew :app:assembleRelease
+
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v1
+              with:
+                  name: the-motorsports-app.apk
+                  path: android/app/build/outputs/apk/release/app-release.apk
