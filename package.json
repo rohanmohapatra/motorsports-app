@@ -1,6 +1,6 @@
 {
     "name": "the-motorsports-app",
-    "version": "1.10.7",
+    "version": "1.10.8",
     "main": "index.tsx",
     "scripts": {
         "start": "expo start",
