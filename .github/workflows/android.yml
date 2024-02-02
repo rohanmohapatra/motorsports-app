@@ -26,7 +26,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Expo Prebuild 
-        run: yarn expo prebuild
+        run: yarn expo prebuild --platform android
 
       - name: make gradlew executable
         run: chmod +x ./android/gradlew
