@@ -1,7 +1,11 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
+import localFont from 'next/font/local';
 
-import { Fonts } from '../fonts';
+const horizon = localFont({
+    src: '../public/fonts/horizon.otf',
+    display: 'swap'
+});
 
 const config = {
     initialColorMode: 'dark',
@@ -18,7 +22,7 @@ const theme = extendTheme({
         }
     },
     fonts: {
-        heading: 'Horizon'
+        heading: horizon.style.fontFamily
     },
     colors: {
         neonGreen: { 500: '#D0FF3C' }
@@ -28,7 +32,6 @@ const theme = extendTheme({
 const App = ({ Component, pageProps }: AppProps) => {
     return (
         <ChakraProvider theme={theme}>
-            <Fonts />
             <Component {...pageProps} />
         </ChakraProvider>
     );
