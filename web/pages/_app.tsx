@@ -1,11 +1,7 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
-import localFont from 'next/font/local';
 
-const horizon = localFont({
-    src: '../public/fonts/horizon.otf',
-    display: 'swap'
-});
+import { horizon } from '../font';
 
 const config = {
     initialColorMode: 'dark',

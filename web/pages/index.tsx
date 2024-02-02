@@ -1,5 +1,6 @@
 import { Button, HStack, Heading, Stack, Image as Img } from '@chakra-ui/react';
 import Image from 'next/image';
+import { horizon } from '../font';
 
 const Index = () => {
     return (
@@ -45,7 +46,7 @@ const Index = () => {
                         <Heading size="xs">Want to be a beta tester?</Heading>
                         <Button
                             rounded="full"
-                            fontFamily="Horizon"
+                            fontFamily={horizon.style.fontFamily}
                             bg="neonGreen.500"
                             color="#222222"
                             onClick={() => {
